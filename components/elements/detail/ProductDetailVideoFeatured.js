@@ -8,7 +8,7 @@ const ProductDetailVideoFeatured = () => (
     <div className="ps-product--detail ps-product--fullwidth">
         <div className="ps-product__header">
             <ThumbnailVideoFeatured />
-            <InformationExtended />
+            {/**<InformationExtended /> */}
         </div>
         <DefaultDescription />
     </div>
