@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "node api/app.js -p 3000",
-        "build": "next build && next export",
+        "build": "next build",
         "start": "next start"
     },
     "dependencies": {
