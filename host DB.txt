@@ -2,7 +2,7 @@ https://server100.serverange.net:2083/cpsess4986235918/frontend/paper_lantern/in
 
 
 era
-Era/2020
+Soluauto/1900
 
 
 host : 72.9.135.10
