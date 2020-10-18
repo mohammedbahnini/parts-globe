@@ -1,6 +1,6 @@
 const next = require('next');
 require('dotenv').config();
-const dev = process.env.NODE_ENV==='dev'; // juyst for now
+const dev = process.env.ENV==='dev'; // juyst for now
 const nextApp = next({dev});
 const handle = nextApp.getRequestHandler();
 const port = process.env.PORT;
