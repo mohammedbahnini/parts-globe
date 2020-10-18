@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "node api/app.js",
+        "dev": "node api/app.js -p 3000",
         "build": "next build && next export",
         "start": "next start"
     },
