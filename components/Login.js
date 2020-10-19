@@ -47,10 +47,10 @@ class Login extends Component {
             const password = this.state.password;
             const remember_me = this.state.rememberMe;
             config();
-            const api_path = `${process.env.HOST}:${process.env.PORT}/api/user/login`;
+            const api_path = `${process.env.HOST}/api/user/login`;
             console.log(process.env.API);
             console.log(api_path);
-            /*const result = await axios.post(api_path,
+            const result = await axios.post(api_path,
                 {
                     email,
                     password,
@@ -63,7 +63,7 @@ class Login extends Component {
                 this.setState({ isLogged: true });
                 this.props.dispatch(login());
                 Router.push('/account/user-information');
-            }*/
+            }
         }, 2000);
 
     };
