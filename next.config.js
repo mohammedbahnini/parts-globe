@@ -17,7 +17,7 @@ const nextConfig = {
         api_2: 'http://localhost',
         PUBLISHABLE_KEY: 'pk_test_51GuNlgK7kyPZtMq547rhppQ0KeiOs6o49MZkaLaRTT6zZOuhNfp4BSJHEVJDTeJAGzIfgCiCtOtvfXWc1R1V2HDx00Oixzal9g',
         PORT: 8000,
-        ENV: 'dev',
+        ENV: 'production',
         SESSION_SECRET: '12df36FG3xDD334f',
         GMAIL_CLIENT_ID: '591889027671-jhjq0oec8aif3v96ma1jri5o8269kctf.apps.googleusercontent.com',
         GMAIL_CLIENT_SECRET: 'g2xwpODdqJtxP2er5xYJZhpJ',
