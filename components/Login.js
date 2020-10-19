@@ -45,8 +45,8 @@ class Login extends Component {
             const email = this.state.email;
             const password = this.state.password;
             const remember_me = this.state.rememberMe;
-            const api_path = `${process.env.api_2}:${process.env.PORT}/api/user/login`;
-            console.log(process.env);
+            const api_path = `${process.env.HOST}:${process.env.PORT}/api/user/login`;
+            console.log(process.env.API);
             console.log(api_path);
             const result = await axios.post(api_path,
                 {
