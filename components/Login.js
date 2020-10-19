@@ -6,6 +6,7 @@ import { isLoggedIn } from '../helpers/auth';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Form, Input, notification, Alert } from 'antd';
 import { connect } from 'react-redux';
+import { config } from 'dotenv';
 
 
 import axios from 'axios';
@@ -45,10 +46,11 @@ class Login extends Component {
             const email = this.state.email;
             const password = this.state.password;
             const remember_me = this.state.rememberMe;
+            config();
             const api_path = `${process.env.HOST}:${process.env.PORT}/api/user/login`;
             console.log(process.env.API);
             console.log(api_path);
-            const result = await axios.post(api_path,
+            /*const result = await axios.post(api_path,
                 {
                     email,
                     password,
@@ -61,7 +63,7 @@ class Login extends Component {
                 this.setState({ isLogged: true });
                 this.props.dispatch(login());
                 Router.push('/account/user-information');
-            }
+            }*/
         }, 2000);
 
     };

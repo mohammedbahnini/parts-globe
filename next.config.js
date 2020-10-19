@@ -42,7 +42,7 @@ const nextConfig = {
     env: {
         PORT: env.PORT,
         HOST: env.HOST,
-        API: `${env.HOST}:${env.PORT}/api`,
+        API: `${env.HOST}/api`,
         ENV: 'production',
         PUBLISHABLE_KEY: env.PUBLISHABLE_KEY,
         SESSION_SECRET: env.SESSION_SECRET,
