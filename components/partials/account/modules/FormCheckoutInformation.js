@@ -133,7 +133,7 @@ class FormCheckoutInformation extends Component {
                 }
             })
         }
-        const validateRes = await axios.post(`${process.env.api}/order/validate`,order);
+        const validateRes = await axios.post(`${process.env.API}/order/validate`,order);
 
         if( validateRes.data.success)
         {
@@ -146,7 +146,7 @@ class FormCheckoutInformation extends Component {
                 const { stripe , elements} = this.props;
 
                 // get client_secret 
-                const paymentIntentReq = await axios.post(`${process.env.api}/payment-intent/create`,{amount  : Math.ceil(this.props.amount*100)});
+                const paymentIntentReq = await axios.post(`${process.env.API}/payment-intent/create`,{amount  : Math.ceil(this.props.amount*100)});
                 
                 if( !paymentIntentReq.data.client_secret)
                 {
@@ -210,7 +210,7 @@ class FormCheckoutInformation extends Component {
             if( canCreateOrder)
             {
                 // then create an order             
-                const orderResponse = await axios.post(`${process.env.api}/order/create`,order);
+                const orderResponse = await axios.post(`${process.env.API}/order/create`,order);
 
                 if( orderResponse.data.errors)
                 {

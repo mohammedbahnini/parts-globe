@@ -15,7 +15,7 @@ class OrderDetail extends React.Component{
 
     componentDidMount = async()=>{
         const { orderID } =  Router.query;
-        const response = await axios.get(`${process.env.api}/order/detail?orderID=${orderID}`);
+        const response = await axios.get(`${process.env.API}/order/detail?orderID=${orderID}`);
 
         this.setState({...response.data});
     }

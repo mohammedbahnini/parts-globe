@@ -17,7 +17,7 @@ class  Notifications extends Component{
     }
 
     changeStatus =async (id)=>{
-        const response = await axios.post(`${process.env.api}/user/update-notification-status/${id}`);
+        const response = await axios.post(`${process.env.API}/user/update-notification-status/${id}`);
         if( response.data.updated)
         {
             const newState = this.state.notifications.map( item =>{

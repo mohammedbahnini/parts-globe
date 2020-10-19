@@ -15,7 +15,7 @@ class AccountQuickLinks extends Component {
 
     handleLogout = e => {
         e.preventDefault();
-        axios.get(`${process.env.api}/user/logout`)
+        axios.get(`${process.env.API}/user/logout`)
         .then(result=>{
             if( result.data.loggedout )
             {

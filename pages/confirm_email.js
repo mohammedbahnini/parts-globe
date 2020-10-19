@@ -29,7 +29,7 @@ export async function getServerSideProps(ctx){
     const { token }= ctx.query;
     
     // try confirm email
-    const { data } = await axios.post(`${process.env.api}/user/confirm-email`,{token});
+    const { data } = await axios.post(`${process.env.API}/user/confirm-email`,{token});
     return { props : { message : data}};
 }
 
@@ -40,7 +40,7 @@ export async function getServerSideProps(ctx){
     const { token }= ctx.query;
     
     // try confirm email
-    const { data } = await axios.post(`${process.env.api}/user/confirm-email`,{token});
+    const { data } = await axios.post(`${process.env.API}/user/confirm-email`,{token});
     return { message : data };
 }*/
 

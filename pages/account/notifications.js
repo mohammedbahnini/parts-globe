@@ -41,7 +41,7 @@ const AccountNotificationsPage = (props) => {
 export async function getServerSideProps(ctx){
     const client_id  = ctx.req.session.client_id;
     // call api
-    const response = await axios.get(`${process.env.api}/users/notifications/${client_id}`);
+    const response = await axios.get(`${process.env.API}/users/notifications/${client_id}`);
     console.log(response.data);
     return {
         props : {

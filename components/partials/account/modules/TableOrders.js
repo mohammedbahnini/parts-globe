@@ -19,7 +19,7 @@ class TableOrders extends Component{
 
     async componentDidMount(){
         const { id } = await getClientData();
-        const orders = await axios.get(`${process.env.api}/order/get/${id}`);
+        const orders = await axios.get(`${process.env.API}/order/get/${id}`);
         this.setState({orders :[...orders.data] });
     }
 

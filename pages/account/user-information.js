@@ -41,7 +41,7 @@ const UserInformationPage = (props) => {
 export async function getServerSideProps(ctx){
     // getting client id 
     const clientID = ctx.req.session.client_id;
-    const response = await axios.post(`${process.env.api}/user/info` , {
+    const response = await axios.post(`${process.env.API}/user/info` , {
         client_id : clientID
     });
     return { props : { client : response.data.client}};

@@ -43,7 +43,7 @@ export async function getServerSideProps(ctx){
 
     // getting client id 
     const clientID = ctx.req.session.client_id;
-    const response = await axios.get(`${process.env.api}/order/get/${clientID}`);
+    const response = await axios.get(`${process.env.API}/order/get/${clientID}`);
     //console.log(response.data);
     return { props : { orders : response.data}};
 }

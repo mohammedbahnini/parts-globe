@@ -32,7 +32,7 @@ class EditPassword extends Component {
          
             setTimeout(async ()=>{
 
-                const result_update = await axios.post(`${process.env.api}/user/update-password` , {
+                const result_update = await axios.post(`${process.env.API}/user/update-password` , {
                     oldPassword : this.state.old_password , 
                     newPassword : this.state.new_password, 
                     confirmPassword : this.state.confirm_password

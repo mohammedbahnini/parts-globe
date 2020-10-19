@@ -41,7 +41,7 @@ class Register extends Component {
             const { firstName , lastName , address , phone , email,password , password2 , postalCode } = this.state;
             
             // perform a request to the server 
-            axios.post(`${process.env.api}/user/register`,{
+            axios.post(`${process.env.API}/user/register`,{
                 firstName  ,
                 lastName  ,
                 address , 

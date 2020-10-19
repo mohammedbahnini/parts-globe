@@ -26,7 +26,7 @@ class UserInformation extends Component {
         this.setState({updating : true});
         setTimeout(async ()=>{
 
-            const result_update = await axios.post(`${process.env.api}/user/update` , {
+            const result_update = await axios.post(`${process.env.API}/user/update` , {
                 firstName : this.state.first_name , 
                 lastName : this.state.last_name, 
                 address : this.state.address , 

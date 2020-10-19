@@ -46,7 +46,7 @@ class Login extends Component {
             const email = this.state.email;
             const password = this.state.password;
             const remember_me = this.state.rememberMe;
-            const api_path = `${process.env.HOST}/api/user/login`;
+            const api_path = `${process.env.API}/user/login`;
             console.log(process.env.API);
             console.log(api_path);
             const result = await axios.post(api_path,
@@ -143,9 +143,9 @@ class Login extends Component {
                                 </div>
 
                                 <div>
-                                    You do not have an account yet ,
+                                    You don't have an account yet,
                                     <Link href="/register">
-                                        <a>Create one</a>
+                                        <a> Create one</a>
                                     </Link>
                                 </div>
                             </div>

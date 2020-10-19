@@ -38,7 +38,7 @@ class SearchResult extends Component {
 
             let currentComponent = this;
 
-            axios.post(`${process.env.api}/products` ,
+            axios.post(`${process.env.API}/products` ,
             {
                 text : query.keyword
             }).then( result =>{

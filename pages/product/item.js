@@ -60,7 +60,7 @@ const ProductDefaultPage = (props) => {
 
 export const getServerSideProps= async (ctx)=>{
     const { guid , source } = ctx.req.query;
-    const item = await axios.post(`${process.env.api}/getSingleItem` , { itemCode : guid , source});
+    const item = await axios.post(`${process.env.API}/getSingleItem` , { itemCode : guid , source});
     console.log(item.data);
     return {
         props : {
