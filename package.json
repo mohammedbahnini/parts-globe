@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "node api/app.js -p 3000",
+        "dev": "nodemon api/app.js",
         "build": "next build",
         "start": "node api/app.js -p $PORT"
     },

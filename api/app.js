@@ -1,7 +1,7 @@
 const next = require('next');
 require('dotenv').config();
-const dev = process.env.ENV==='dev'; // juyst for now
-const nextApp = next({dev});
+const dev = process.env.ENV === 'dev'; // juyst for now
+const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
 const port = process.env.PORT;
 
@@ -20,17 +20,17 @@ const productRouter = require('./routes/productRouter');
 const orderModel = require('./models/orderModel');
 
 
-nextApp.prepare().then( ()=>{
+nextApp.prepare().then(() => {
     const app = express();
-    
+
     app.use(session({
-        name :  'sess_id',
-        secret : process.env.SESSION_SECRET,
-        resave : false , 
-        saveUninitialized : false ,
-        httpOnly : true  
+        name: 'sess_id',
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        httpOnly: true
     }));
-    
+
     app.use(express.json());
     app.use(clientRouter);
     app.use(rosskoRouter);
@@ -40,39 +40,39 @@ nextApp.prepare().then( ()=>{
 
     const clientProfileRoutes = [
         '/account/user-information',
-        '/account/notifications' ,
-        '/account/invoices' , 
-        '/account/addresses' , 
-        '/account/recent-viewed-product' , 
-        '/account/wishlist' ,
+        '/account/notifications',
+        '/account/invoices',
+        '/account/addresses',
         '/account/recent-viewed-product',
-        '/account/checkout' , 
-        '/account/orders' , 
+        '/account/wishlist',
+        '/account/recent-viewed-product',
+        '/account/checkout',
+        '/account/orders',
         '/account/edit-password'
 
     ];
 
     //check the user is connected
-    const checker = (req, res ,next )=>{
-        
-        const requestedUrl = req.originalUrl;
-        const matchedRoute =  clientProfileRoutes.filter( url => url === requestedUrl);
+    const checker = (req, res, next) => {
 
-       
-        if( matchedRoute.length===1 && !req.session.client_id)
+        const requestedUrl = req.originalUrl;
+        const matchedRoute = clientProfileRoutes.filter(url => url === requestedUrl);
+
+
+        if (matchedRoute.length === 1 && !req.session.client_id)
             res.redirect('/login');
         else next();
     };
 
-    
-    app.use( checker );
-    app.get('*' , (req,res)=>{
-        return handle(req , res);
+
+    app.use(checker);
+    app.get('*', (req, res) => {
+        return handle(req, res);
     });
 
 
-    app.listen(port , ()=>{
-        console.log('server is running');
+    app.listen(port, () => {
+        console.log(`server is running on port : ${port}`);
     })
 });
 
