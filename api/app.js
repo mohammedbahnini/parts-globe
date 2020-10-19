@@ -80,8 +80,6 @@ nextApp.prepare().then(() => {
 
     app.listen(port, () => {
         console.log(`server is running on port : ${port}`);
-        console.log('process . env :');
-        console.log(process.env);
     })
 });
 
