@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Router from 'next/router';
 import { login } from '../store/auth/action';
 import { isLoggedIn } from '../helpers/auth';
-import  {LoadingOutlined} from '@ant-design/icons';
-import { Form, Input, notification , Alert } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+import { Form, Input, notification, Alert } from 'antd';
 import { connect } from 'react-redux';
 
 
@@ -14,74 +14,74 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            errors : [] , 
-            email :'mohammed.gosoft@gmail.com',
-            password : '123456789' , 
-            rememberMe : false , 
-            process : false , 
-            isLogged : false
+            errors: [],
+            email: 'mohammed.gosoft@gmail.com',
+            password: '123456789',
+            rememberMe: false,
+            process: false,
+            isLogged: false
         };
     }
 
 
-    onChangeInput =(e)=>{
+    onChangeInput = (e) => {
         const { name, value } = e.target;
-        this.setState({ [name] : value });
+        this.setState({ [name]: value });
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         // check is logged in 
         const isLogged = await isLoggedIn();
-        if( isLogged )
+        if (isLogged)
             Router.push('/');
     }
 
 
 
-    handleLoginSubmit =async (e) => {
+    handleLoginSubmit = async (e) => {
         e.preventDefault();
-        this.setState({process : true , errors : []});
-        setTimeout( async ()=>{
+        this.setState({ process: true, errors: [] });
+        setTimeout(async () => {
             const email = this.state.email;
-            const password=this.state.password;
-            const remember_me = this.state.rememberMe ;
-    
-            const result = await  axios.post(`${process.env.api}/user/login`, 
+            const password = this.state.password;
+            const remember_me = this.state.rememberMe;
+
+            const result = await axios.post(`${process.env.api}/user/login`,
+                {
+                    email,
+                    password,
+                    remember_me
+                });
+
+            this.setState({ errors: result.data.errors, process: false });
+            if (result.data.errors.length === 0) // login success
             {
-                email,
-                password,
-                remember_me
-            });
-    
-            this.setState({errors : result.data.errors , process : false });
-            if( result.data.errors.length === 0) // login success
-            {
-                this.setState({ isLogged : true });
-                this.props.dispatch( login());
+                this.setState({ isLogged: true });
+                this.props.dispatch(login());
                 Router.push('/account/user-information');
             }
         }, 2000);
-       
+
     };
 
     render() {
 
-        const errorsStyle = {marginBottom : '20px'};
+        const errorsStyle = { marginBottom: '20px' };
         return (
             <div className="ps-my-account">
                 <div className="container">
                     <Form
                         className="ps-form--account"
                         onSubmit={this.handleLoginSubmit}>
-                        
+
                         <div className="ps-tab active" id="sign-in">
                             <div className="ps-form__content">
                                 <h5>Log In Your Account</h5>
-                                
+
                                 {
-                                    this.state.errors.map( error => {
+                                    this.state.errors.map(error => {
                                         return (
-                                            <div style={errorsStyle}>
+                                            <div style={errorsStyle} key={error.message}>
                                                 <Alert message={error.message} type={error.type} showIcon />
                                             </div>
                                         )
@@ -91,25 +91,25 @@ class Login extends Component {
                                 <div className="form-group">
                                     <Form.Item>
                                         <Input
-                                                className="form-control"
-                                                type="text"
-                                                placeholder="Email address"
-                                                name="email"
-                                                onChange={this.onChangeInput}
-                                                value={this.state.email}
-                                            />
+                                            className="form-control"
+                                            type="text"
+                                            placeholder="Email address"
+                                            name="email"
+                                            onChange={this.onChangeInput}
+                                            value={this.state.email}
+                                        />
                                     </Form.Item>
                                 </div>
                                 <div className="form-group form-forgot">
                                     <Form.Item>
                                         <Input
-                                                className="form-control"
-                                                type="password"
-                                                placeholder="Password..."
-                                                name="password"
-                                                onChange={this.onChangeInput}
-                                                value = {this.state.password}
-                                            />
+                                            className="form-control"
+                                            type="password"
+                                            placeholder="Password..."
+                                            name="password"
+                                            onChange={this.onChangeInput}
+                                            value={this.state.password}
+                                        />
                                     </Form.Item>
                                 </div>
                                 <div className="form-group">
@@ -131,22 +131,22 @@ class Login extends Component {
                                         type="submit"
                                         className="ps-btn ps-btn--fullwidth"
                                         disabled={this.state.process || this.state.isLogged}
-                                        >
-                                        {this.state.process && (<LoadingOutlined style={{marginRight:'15px'}} />)}
+                                    >
+                                        {this.state.process && (<LoadingOutlined style={{ marginRight: '15px' }} />)}
                                         {this.state.process && 'Logging in ...'}
                                         {this.state.isLogged && ('You are logged')}
-                                        {this.state.process==false && this.state.isLogged==false && ('Login')}
+                                        {this.state.process == false && this.state.isLogged == false && ('Login')}
                                     </button>
                                 </div>
 
                                 <div>
-                                    You do not have an account yet , 
+                                    You do not have an account yet ,
                                     <Link href="/register">
                                         <a>Create one</a>
                                     </Link>
                                 </div>
                             </div>
-                      
+
                         </div>
                     </Form>
                 </div>

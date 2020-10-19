@@ -9,6 +9,7 @@ const port = process.env.PORT;
 /* express section */
 const express = require('express');
 const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 
 /** user routes */
 const clientRouter = require('./routes/clientRouter');
@@ -28,7 +29,13 @@ nextApp.prepare().then(() => {
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
-        httpOnly: true
+        httpOnly: true,
+        store: new MySQLStore({
+            host: '72.9.135.10',
+            user: 'era_creator',
+            password: 'Gu35T_2020',
+            database: 'era_auto_parts'
+        })
     }));
 
     app.use(express.json());
