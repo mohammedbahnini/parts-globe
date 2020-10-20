@@ -7,6 +7,24 @@ import MobileHeaderActions from './modules/MobileHeaderActions';
 class HeaderMobile extends Component {
     constructor({ props }) {
         super(props);
+        this.state = {
+            searchPanel: false,
+            keyword: '',
+        };
+
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const keyword = this.state.keyword;
+        //Router.push(`/search?keyword=${keyword}`);
+        window.location = `/search?keyword=${keyword}`;
+    }
+
+    updateStateKeyword = (e) => {
+        this.setState({
+            keyword: e.target.value
+        });
     }
 
     render() {
@@ -53,12 +71,14 @@ class HeaderMobile extends Component {
                     <form
                         className="ps-form--search-mobile"
                         action="index.html"
-                        method="get">
+                        method="get"
+                        onSubmit={this.handleSubmit}>
                         <div className="form-group--nest">
                             <input
                                 className="form-control"
                                 type="text"
                                 placeholder="Search something..."
+                                onChange={this.updateStateKeyword}
                             />
                             <button>
                                 <i className="icon-magnifier"></i>

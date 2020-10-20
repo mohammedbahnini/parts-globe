@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
-import { isLoggedIn , getClientData } from '../../../../helpers/auth';
+import { isLoggedIn, getClientData } from '../../../../helpers/auth';
 import { changeLoggedInStatus } from '../../../../store/auth/action';
 import { logOut } from '../../../../store/auth/action';
 import Router from 'next/router';
@@ -16,27 +16,26 @@ class AccountQuickLinks extends Component {
     handleLogout = e => {
         e.preventDefault();
         axios.get(`${process.env.API}/user/logout`)
-        .then(result=>{
-            if( result.data.loggedout )
-            {
-                this.props.dispatch(logOut());
-                Router.push('/login');
-            }
-        });
+            .then(result => {
+                if (result.data.loggedout) {
+                    this.props.dispatch(logOut());
+                    Router.push('/login');
+                }
+            });
     };
 
-    async componentDidMount(){
+    async componentDidMount() {
         // check if the user is logged in
         const isLogged = await isLoggedIn();
         this.props.dispatch(changeLoggedInStatus(isLogged));
-        if( isLogged){
-            const clientData =await  getClientData();
-            this.setState({...clientData});
+        if (isLogged) {
+            const clientData = await getClientData();
+            this.setState({ ...clientData });
         }
     }
 
     render() {
-        const accountLinks =  [
+        const accountLinks = [
             {
                 text: 'Account Information',
                 url: '/account/user-information',
@@ -53,21 +52,21 @@ class AccountQuickLinks extends Component {
                 icon: 'icon-papers',
             }
         ];
-        const isLoggedIn = this.props.auth.isLoggedIn ;
+        const isLoggedIn = this.props.auth.isLoggedIn;
         const client = this.state;
         if (isLoggedIn === true) {
             return (
                 <div className="ps-block--user-account">
-                   <div style={{display : 'flex' , alignItems : 'center'}}> 
-                       <i className="icon-user"></i>
-            <h4 style={{marginLeft : '10px' , marginTop:'10px'}}>{client.first_name} {client.last_name}</h4>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <i className="icon-user"></i>
+                        <h4 style={{ marginLeft: '10px', marginTop: '10px' }}>{client.first_name} {client.last_name}</h4>
                     </div>
                     <div className="ps-block__content">
                         <ul className="ps-list--arrow">
                             {accountLinks.map(link => (
                                 <li key={link.text}>
                                     <Link href={link.url}>
-                                      <a>{link.text}</a>
+                                        <a>{link.text}</a>
                                     </Link>
                                 </li>
                             ))}
@@ -88,7 +87,7 @@ class AccountQuickLinks extends Component {
                     <div className="ps-block__left">
                         <i className="icon-user"></i>
                     </div>
-                    <div className="ps-block__right">
+                    <div className="ps-block__right" style={{ display: 'block' }}>
                         <Link href="/login">
                             <a>Login</a>
                         </Link>
