@@ -26,15 +26,15 @@ class SearchHeader extends Component {
         window.location = `/search?keyword=${keyword}`;
     }
 
-    updateStateKeyword = (e)=>{
+    updateStateKeyword = (e) => {
         this.setState({
-            keyword : e.target.value
+            keyword: e.target.value
         });
     }
 
     render() {
         const { searchPanel, searchProducts } = this.state;
-       
+
         return (
             <form
                 className="ps-form--quick-search"
@@ -50,9 +50,8 @@ class SearchHeader extends Component {
                 />
                 <button onClick={this.handleSubmit.bind(this)}>Search</button>
                 <div
-                    className={`ps-panel--search-result${
-                        searchPanel && searchPanel === true ? ' active ' : ''
-                    }`}>
+                    className={`ps-panel--search-result${searchPanel && searchPanel === true ? ' active ' : ''
+                        }`}>
                     <div className="ps-panel__content">
                         {searchProducts.length > 0 ? (
                             searchProducts.map(product => (
@@ -62,8 +61,8 @@ class SearchHeader extends Component {
                                 />
                             ))
                         ) : (
-                            <span>Not found! Try with another keyword.</span>
-                        )}
+                                <span>Not found! Try with another keyword.</span>
+                            )}
                     </div>
                     <div className="ps-panel__footer text-center">
                         <Link href="/search">

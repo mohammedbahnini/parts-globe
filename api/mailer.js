@@ -37,7 +37,7 @@ const sendMail = async (reciever, token) => {
             template: 'mail',
             context: {
                 msg: 'Verify your email',
-                link: `${process.env.WEBSITE_ORIGINE}/confirm_email?token=${token}`
+                link: `${process.env.HOST}/confirm_email?token=${token}`
             }
         };
 

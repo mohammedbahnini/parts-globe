@@ -49,6 +49,8 @@ class Login extends Component {
             const api_path = `${process.env.API}/user/login`;
             console.log(process.env.API);
             console.log(api_path);
+            console.log(process.env.HOST);
+
             const result = await axios.post(api_path,
                 {
                     email,
