@@ -25,8 +25,8 @@ const nextConfig = {
     env: {
         PORT: config.PORT,
         ENV: config.ENV,
-        HOST: config.ENV === 'production' ? config.HOST : config.HOST_DEV,
-        API: config.ENV === 'production' ? config.API : config.API_DEV,
+        HOST: config.HOST,
+        API: config.API,
         PUBLISHABLE_KEY: config.PUBLISHABLE_KEY,
         SESSION_SECRET: config.SESSION_SECRET,
         GMAIL_CLIENT_ID: config.GMAIL_CLIENT_ID,
