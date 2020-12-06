@@ -52,6 +52,7 @@ class AccountQuickLinks extends Component {
                 icon: 'icon-papers',
             }
         ];
+        console.log(this.props.lang);
         const isLoggedIn = this.props.auth.isLoggedIn;
         const client = this.state;
         if (isLoggedIn === true) {
@@ -89,7 +90,7 @@ class AccountQuickLinks extends Component {
                     </div>
                     <div className="ps-block__right" style={{ display: 'block' }}>
                         <Link href="/login">
-                            <a>Login</a>
+                            <a>{this.props.lang.langData.loginTitle}</a>
                         </Link>
                         <Link href="/register">
                             <a>Register</a>

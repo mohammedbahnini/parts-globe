@@ -8,6 +8,7 @@ import MiniCart from './modules/MiniCart';
 import AccountQuickLinks from './modules/AccountQuickLinks';
 import { logOut } from '../../../store/auth/action';
 import CurrencyDropdown from './modules/CurrencyDropdown';
+import LanguageSwicher from './modules/LanguageSwicher';
 
 class HeaderAutoPart extends Component {
     constructor({ props }) {
@@ -110,6 +111,9 @@ class HeaderAutoPart extends Component {
                                 </li>
                                 <li>
                                     <CurrencyDropdown />
+                                </li>
+                                <li>
+                                    <LanguageSwicher />
                                 </li>
                                 <li>
                                     {auth.isLoggedIn &&

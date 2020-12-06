@@ -6,6 +6,7 @@ import CartSaga from './cart/saga';
 import AuthSaga from './auth/saga';
 import CompareSaga from './compare/saga';
 import WishlistSaga from './wishlist/saga';
+import LangSaga from './lang/saga';
 
 export default function* rootSaga() {
     yield all([
@@ -16,5 +17,6 @@ export default function* rootSaga() {
         AuthSaga(),
         CompareSaga(),
         WishlistSaga(),
+        LangSaga()
     ]);
 }

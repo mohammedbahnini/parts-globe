@@ -7,6 +7,7 @@ import cart from './cart/reducer';
 import compare from './compare/reducer';
 import auth from './auth/reducer';
 import wishlist from './wishlist/reducer';
+import lang from './lang/reducer';
 
 export default combineReducers({
     auth,
@@ -17,4 +18,5 @@ export default combineReducers({
     cart,
     compare,
     wishlist,
+    lang
 });

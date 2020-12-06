@@ -20,13 +20,13 @@ const nextSettings = {
         };
     }
 };
-
+console.log(config.ENV);
 const nextConfig = {
     env: {
         PORT: config.PORT,
         ENV: config.ENV,
-        HOST: config.HOST,
-        API: config.API,
+        HOST: config.ENV == 'dev' ? config.HOST_DEV : config.HOST,
+        API: config.ENV == 'dev' ? config.API_DEV : config.API,
         PUBLISHABLE_KEY: config.PUBLISHABLE_KEY,
         SESSION_SECRET: config.SESSION_SECRET,
         GMAIL_CLIENT_ID: config.GMAIL_CLIENT_ID,
@@ -36,5 +36,7 @@ const nextConfig = {
         GMAIL_ACCESS_TOKEN: config.GMAIL_ACCESS_TOKEN,
     }
 }
+
+console.log(nextConfig);
 
 module.exports = withPlugins([[withSass(), withImages()]], nextConfig);

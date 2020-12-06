@@ -54,6 +54,10 @@ class NavigationDefault extends Component {
                                 <CurrencyDropdown />
                             </li>
 
+                            <li>
+                                <LanguageSwicher />
+                            </li>
+
                         </ul>
                     </div>
                 </div>
