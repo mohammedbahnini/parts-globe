@@ -37,6 +37,4 @@ const nextConfig = {
     }
 }
 
-console.log(nextConfig);
-
 module.exports = withPlugins([[withSass(), withImages()]], nextConfig);

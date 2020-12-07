@@ -28,8 +28,6 @@ export const changeLang = (lang)=>{
                     langData : enData
                 }
             };
-        default :
-            return { type : actionTypes.CHANGE_TO_EN};
     }
 
 }

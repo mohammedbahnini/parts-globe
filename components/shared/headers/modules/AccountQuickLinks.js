@@ -52,9 +52,11 @@ class AccountQuickLinks extends Component {
                 icon: 'icon-papers',
             }
         ];
-        console.log(this.props.lang);
+
         const isLoggedIn = this.props.auth.isLoggedIn;
         const client = this.state;
+        const { langData } = this.props.lang;
+
         if (isLoggedIn === true) {
             return (
                 <div className="ps-block--user-account">
@@ -90,10 +92,10 @@ class AccountQuickLinks extends Component {
                     </div>
                     <div className="ps-block__right" style={{ display: 'block' }}>
                         <Link href="/login">
-                            <a>{this.props.lang.langData.loginTitle}</a>
+                            <a>{langData.login_label}</a>
                         </Link>
                         <Link href="/register">
-                            <a>Register</a>
+                            <a>{langData.register_label}</a>
                         </Link>
                     </div>
                 </div>

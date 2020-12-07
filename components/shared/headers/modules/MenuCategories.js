@@ -1,11 +1,18 @@
 import React from 'react';
 import menuData from '../../../../public/static/data/menu';
 import Menu from '../../../elements/menu/Menu';
-const MenuCategories = () => {
+import { connect } from 'react-redux';
 
+const MenuCategories = (props) => {
+    console.log(props.langData.menuPrimary);
+    const { langData } = props;
     return (
-        <Menu data={menuData.product_categories} className="menu--dropdown" />
+        <Menu data={langData.product_categories} className="menu--dropdown"/>
     )
 }
 
-export default MenuCategories;
+const mapStateToProps = state =>{
+    return state.lang;
+}
+
+export default connect(mapStateToProps)(MenuCategories);

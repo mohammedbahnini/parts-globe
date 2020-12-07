@@ -6,6 +6,7 @@ import Menu from '../../elements/menu/Menu';
 import menuData from '../../../public/static/data/menu';
 import CurrencyDropdown from '../headers/modules/CurrencyDropdown';
 import LanguageSwicher from '../headers/modules/LanguageSwicher';
+import { connect } from 'react-redux';
 
 class NavigationDefault extends Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class NavigationDefault extends Component {
     }
 
     render() {
+        const { langData } = this.props;
         return (
             <nav className="navigation">
                 <div className="ps-container">
@@ -35,7 +37,7 @@ class NavigationDefault extends Component {
                             </div>
                             <div className="menu__content">
                                 {<Menu
-                                    data={menuData.product_categories}
+                                    data={langData.product_categories}
                                     className="menu--dropdown"
                                 />}
                             </div>
@@ -44,16 +46,10 @@ class NavigationDefault extends Component {
 
                     <div className="navigation__right">
                         {<Menu
-                            data={menuData.menuPrimary.menu_1}
+                            data={langData.menuPrimary}
                             className="menu"
                         />}
                         <ul className="navigation__extra">
-
-
-                            <li>
-                                <CurrencyDropdown />
-                            </li>
-
                             <li>
                                 <LanguageSwicher />
                             </li>
@@ -66,4 +62,8 @@ class NavigationDefault extends Component {
     }
 }
 
-export default NavigationDefault;
+const mapStateToProps = state =>{
+    return state.lang;
+}
+
+export default connect(mapStateToProps)(NavigationDefault);

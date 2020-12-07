@@ -15,7 +15,7 @@ class LanguageSwicher extends Component {
         this.props.dispatch( changeLang(lang) );
     }
     render() {
-        console.log(this.props);
+
         const { currentLang , langs } = this.props;
         const menuLangs = langs.filter( lang => lang.id !== currentLang.id);
         return (
