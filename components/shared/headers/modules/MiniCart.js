@@ -26,7 +26,7 @@ class MiniCart extends Component {
     }
 
     render() {
-        console.log(this.props);
+
         const { amount, cartTotal, cartItems } = this.props.cart;
         const { langData } = this.props.lang;
         return (

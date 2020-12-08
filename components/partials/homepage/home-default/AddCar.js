@@ -32,7 +32,6 @@ class AddCar extends Component {
     render() {
 
         const { vihecule_search_home } = this.props;
-        console.log(vihecule_search_home.title);
         return (
             <div className="ps-container">
 
