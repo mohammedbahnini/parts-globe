@@ -24,7 +24,7 @@ const Index = () => (
             <HomeBanner />
             <AddCar />
             <SiteFeatures />
-            <HomeDefaultTopCategories/>
+            <HomeDefaultTopCategories />
             <BestSellers />
             <TopRated />
             <DownLoadApp />
