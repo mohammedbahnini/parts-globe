@@ -5,6 +5,7 @@ import Router from 'next/router';
 import ProductResult from '../../../elements/products/ProductSearchResult';
 import { products } from '../../../../public/static/data/product';
 import Routes from 'next-routes';
+import { connect } from 'react-redux';
 
 
 
@@ -34,7 +35,7 @@ class SearchHeader extends Component {
 
     render() {
         const { searchPanel, searchProducts } = this.state;
-
+        const { placeholder, button_text } = this.props;
         return (
             <form
                 className="ps-form--quick-search"
@@ -45,10 +46,10 @@ class SearchHeader extends Component {
                 <input
                     className="form-control"
                     type="text"
-                    placeholder="I'm shopping for..."
+                    placeholder={placeholder}
                     onChange={this.updateStateKeyword}
                 />
-                <button onClick={this.handleSubmit.bind(this)}>Search</button>
+                <button onClick={this.handleSubmit.bind(this)}>{button_text}</button>
                 <div
                     className={`ps-panel--search-result${searchPanel && searchPanel === true ? ' active ' : ''
                         }`}>
@@ -75,4 +76,8 @@ class SearchHeader extends Component {
     }
 }
 
-export default SearchHeader;
+function mapStateToProps(state) {
+    return state.lang.langData.search_header;
+}
+
+export default connect(mapStateToProps)(SearchHeader);

@@ -88,15 +88,15 @@ class MiniCart extends Component {
                         </div>
                         <div className="ps-cart__footer">
                             <h3>
-                                `${langData.mini_cart.sub_total_label} :`
+                                {langData.mini_cart.sub_total_label}$
                                 <strong>${amount ? amount : 0}</strong>
                             </h3>
                             <figure>
                                 <Link href="/account/shopping-cart" as="/cart">
-                                    <a className="ps-btn">View Cart</a>
+                                    <a className="ps-btn">{langData.mini_cart.view_cart_button_text}</a>
                                 </Link>
 
-                                <button className="ps-btn" onClick={this.handleCheckOut}>Checkout</button>
+                                <button className="ps-btn" onClick={this.handleCheckOut}>{langData.mini_cart.checkout_button_text}</button>
                             </figure>
                         </div>
                     </div>

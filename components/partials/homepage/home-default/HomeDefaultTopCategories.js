@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { connect } from 'react-redux';
 
-const HomeDefaultTopCategories = () => (
+const HomeDefaultTopCategories = ({ top_catalogs }) => (
     <div className="ps-top-categories">
         <div className="ps-container">
-            <h3>Top categories</h3>
+            <h3>{top_catalogs.title}</h3>
             <div className="row">
                 <div className="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
                     <div className="ps-block--category">
@@ -83,4 +84,9 @@ const HomeDefaultTopCategories = () => (
     </div>
 );
 
-export default HomeDefaultTopCategories;
+const stateToProps = state => {
+    return state.lang.langData;
+}
+
+
+export default connect(stateToProps)(HomeDefaultTopCategories);

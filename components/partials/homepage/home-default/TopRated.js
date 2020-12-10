@@ -64,7 +64,7 @@ class TopRated extends Component {
             <div className="ps-product-list">
                 <div className="ps-container">
                     <div className="ps-section__header">
-                        <h3>Top Rated</h3>
+                        <h3>{this.props.title}</h3>
                     </div>
                     <div className="ps-section__content">
                         <Slider {...carouselSetting} className="ps-carousel outside">
@@ -79,5 +79,5 @@ class TopRated extends Component {
     }
 }
 
-const mapStateToProps = ({ post }) => ({ post });
+const mapStateToProps = (state) => (state.lang.langData.top_rated);
 export default connect(mapStateToProps)(TopRated);

@@ -20,7 +20,7 @@ const nextSettings = {
         };
     }
 };
-console.log(config.ENV);
+
 const nextConfig = {
     env: {
         PORT: config.PORT,

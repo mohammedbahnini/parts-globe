@@ -4,85 +4,84 @@ import Router from 'next/router';
 import { Form, Input } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { Alert , notification } from 'antd';
-import  {LoadingOutlined} from '@ant-design/icons';
+import { Alert, notification } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
 class Register extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            errors : [] ,
-            firstName : '',
-            lastName : '',
-            email : '',
-            password : '',
-            password2 : '',
+            errors: [],
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            password2: '',
             phone: '',
-            address : '',
-            postalCode : '' ,
-            process : false , 
-            registerd : false
+            address: '',
+            postalCode: '',
+            process: false,
+            registerd: false
         };
 
-       
+
     }
 
-    onChangeInput = (e)=>{
-        const { name , value } = e.target;
-        this.setState({ [name] : value });
+    onChangeInput = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
     }
 
 
     handleSubmit = e => {
         e.preventDefault();
-        this.setState({process : true , errors: []});
-        setTimeout(()=>{
-            const { firstName , lastName , address , phone , email,password , password2 , postalCode } = this.state;
-            
+        this.setState({ process: true, errors: [] });
+        setTimeout(() => {
+            const { firstName, lastName, address, phone, email, password, password2, postalCode } = this.state;
+
             // perform a request to the server 
-            axios.post(`${process.env.API}/user/register`,{
-                firstName  ,
-                lastName  ,
-                address , 
-                phone  ,
-                email , 
-                password  ,
-                password2 , 
+            axios.post(`${process.env.API}/user/register`, {
+                firstName,
+                lastName,
+                address,
+                phone,
+                email,
+                password,
+                password2,
                 postalCode
-            }).then( res =>{
-                this.setState({process : false });
+            }).then(res => {
+                this.setState({ process: false });
                 const data = res.data;
-                if( data.errors )
-                {
+                if (data.errors) {
                     this.setState({
-                        errors : data.errors
-                    });  
+                        errors: data.errors
+                    });
                 }
-                else if( data.insertedId )
-                {
-                    this.setState({errors : [] , registerd : true  });
-                    
+                else if (data.insertedId) {
+                    this.setState({ errors: [], registerd: true });
+
                     notification['success']({
-                        message : 'Success',
-                        description : 'Your account has been created successfuly , now you can login to you account .',
-                        duration : 5 ,
-                        onClose : ()=>{
+                        message: 'Success',
+                        description: 'Your account has been created successfuly , now you can login to you account .',
+                        duration: 5,
+                        onClose: () => {
                             Router.push('/login');
                         }
                     });
                     Router.push('/login');
-                    
+
                 }
             });
 
-        },2000);
-        
+        }, 2000);
+
     };
 
     render() {
 
-        const errorsStyle = {marginBottom : '20px'};
+        const errorsStyle = { marginBottom: '20px' };
+        const { register_section } = this.props;
 
         return (
             <div className="ps-my-account">
@@ -93,9 +92,9 @@ class Register extends Component {
 
                         <div className="ps-tab active" id="register">
                             <div className="ps-form__content">
-                                <h5>Register An Account</h5>
+                                <h5>{register_section.title}</h5>
                                 {
-                                    this.state.errors.map( error => {
+                                    this.state.errors.map(error => {
                                         return (
                                             <div style={errorsStyle}>
                                                 <Alert message={error} type="error" showIcon />
@@ -105,45 +104,45 @@ class Register extends Component {
                                 }
                                 <div className="form-group">
                                     <Form.Item>
-                                       <Input
+                                        <Input
                                             className="form-control"
                                             type="text"
-                                            placeholder="First name"
+                                            placeholder={register_section.first_name_placeholder}
                                             name="firstName"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
                                 <div className="form-group">
                                     <Form.Item>
-                                       <Input
+                                        <Input
                                             className="form-control"
                                             type="text"
-                                            placeholder="Last name"
+                                            placeholder={register_section.last_name_placeholder}
                                             name="lastName"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
                                 <div className="form-group">
                                     <Form.Item>
-                                       <Input
+                                        <Input
                                             className="form-control"
                                             type="email"
-                                            placeholder="Email address"
+                                            placeholder={register_section.email_placeholder}
                                             name="email"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
                                 <div className="form-group">
                                     <Form.Item>
-                                       <Input.TextArea
+                                        <Input.TextArea
                                             className="form-control"
                                             type="text"
-                                            placeholder="Address,appartement,etc..."
+                                            placeholder={register_section.adress_label}
                                             name="address"
-                                            autoSize={{minRows:2,maxRows:5}}
+                                            autoSize={{ minRows: 2, maxRows: 5 }}
                                             onChange={this.onChangeInput}
                                         />
                                     </Form.Item>
@@ -151,23 +150,23 @@ class Register extends Component {
                                 </div>
                                 <div className="form-group">
                                     <Form.Item>
-                                       <Input
+                                        <Input
                                             className="form-control"
                                             type="text"
-                                            placeholder="Postal code"
+                                            placeholder={register_section.postal_code_placeholder}
                                             name="postalCode"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
                                 <div className="form-group">
                                     <Form.Item>
-                                       <Input
+                                        <Input
                                             className="form-control"
                                             type="text"
-                                            placeholder="Phone number"
+                                            placeholder={register_section.phone_placeholder}
                                             name="phone"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
@@ -176,9 +175,9 @@ class Register extends Component {
                                         <Input
                                             className="form-control"
                                             type="password"
-                                            placeholder="Password"
+                                            placeholder={register_section.password_placeholder}
                                             name="password"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
@@ -187,9 +186,9 @@ class Register extends Component {
                                         <Input
                                             className="form-control"
                                             type="password"
-                                            placeholder="Confirm password"
+                                            placeholder={register_section.confirm_password_placeholder}
                                             name="password2"
-                                            onChange={e=> this.onChangeInput(e)}
+                                            onChange={e => this.onChangeInput(e)}
                                         />
                                     </Form.Item>
                                 </div>
@@ -198,27 +197,28 @@ class Register extends Component {
                                         type="submit"
                                         className="ps-btn ps-btn--fullwidth"
                                         disabled={this.state.process || this.state.registerd}>
-                                        {this.state.process && (<LoadingOutlined style={{marginRight:'15px'}} />)}
-                                        {this.state.process && 'Registring...'}
-                                        {this.state.registerd && ('You are registred')}
-                                        {this.state.process==false && this.state.registerd==false && ('Register')}
+                                        {this.state.process && (<LoadingOutlined style={{ marginRight: '15px' }} />)}
+                                        {this.state.process && register_section.registering_label}
+                                        {this.state.registerd && register_section.registerd_label}
+                                        {this.state.process == false && this.state.registerd == false && register_section.register_label}
                                     </button>
                                 </div>
                             </div>
-                           
+
                         </div>
                     </Form>
                 </div>
-              
+
             </div>
 
             /* check ths info */
-           
+
         );
     }
 }
 const WrapFormRegister = Form.create()(Register);
+
 const mapStateToProps = state => {
-    return state.auth;
+    return state.lang.langData.register_page;
 };
 export default connect(mapStateToProps)(WrapFormRegister);

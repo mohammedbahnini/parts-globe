@@ -4,14 +4,13 @@ import Menu from '../../../elements/menu/Menu';
 import { connect } from 'react-redux';
 
 const MenuCategories = (props) => {
-    console.log(props.langData.menuPrimary);
     const { langData } = props;
     return (
-        <Menu data={langData.product_categories} className="menu--dropdown"/>
+        <Menu data={langData.product_categories} className="menu--dropdown" />
     )
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return state.lang;
 }
 

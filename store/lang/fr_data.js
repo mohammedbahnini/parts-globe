@@ -557,8 +557,10 @@ export const frData = {
         }
     ],
     mini_cart: {
-        sub_total_label: 'Sous Total',
-        no_product_label: 'Panier vide'
+        sub_total_label: 'Sous Total : ',
+        no_product_label: 'Panier vide',
+        view_cart_button_text: 'Voir panier',
+        checkout_button_text: 'Check-out'
     },
     vihecule_search_home: {
         title: 'Ajouter une vihecule pour trouver la pièce exacte ',
@@ -588,5 +590,93 @@ export const frData = {
             title: 'Service des cadaux',
             text: 'support pour service des cadaux'
         }
+    },
+    top_catalogs: {
+        title: 'Meilleurs gatégories'
+    },
+    best_sellers: {
+        title: 'Meilleurs ventes'
+    },
+    top_rated: {
+        title: 'Meilleurs notés'
+    },
+    footer: {
+        contact_us: {
+            title: 'Contactez nous',
+            week_days_label: 'Jours de la semaine',
+            saturday_label: 'Samedi'
+        },
+        quick_links: {
+            title: 'Liens rapide',
+            policy_label: 'Politique',
+            term_and_conditions_label: 'Termes et conditions',
+            shipping_label: 'Livraison',
+            return_label: 'Retour',
+            faqs_label: 'FAQs'
+        },
+        company: {
+            title: 'Entreprise',
+            about_us_label: 'A propos de nous',
+            affiliate_label: 'Affiliers',
+            career_label: 'Cariére',
+            contact_label: 'Contactez nous'
+        },
+        buesiness: {
+            title: 'Affaires',
+            our_press_label: 'Notre presse',
+            checkout_label: 'Check-out',
+            my_account_label: 'Mon compte',
+            shop_label: 'Boutique'
+        }
+    },
+    search_header: {
+        placeholder: `Je recherche...`,
+        button_text: 'Rechercher'
+    },
+    login_page: {
+        login_breadcrumb: [
+            {
+                text: "Acceuil",
+                url: "/"
+            },
+            {
+                text: "Se connecter"
+            }
+        ],
+        login_section: {
+            title: 'Se connecter à votre compte',
+            remember_me_label: 'Sevenez moi',
+            notice: `Vous n'avez pas encore de compte,`,
+            create_account_link: 'Créer un',
+            logging_in_label: 'Connection ...',
+            logged_label: 'Vous êtes connectez',
+            login_label: 'Se connecter'
+        }
+    },
+    register_page: {
+        breadcrumb: [
+            {
+                text: "Acceuil",
+                url: "/"
+            },
+            {
+                text: "S'inscrire"
+            }
+        ],
+        register_section: {
+            title: 'Créer un compte',
+            first_name_placeholder: 'Nom',
+            last_name_placeholder: 'Prénom',
+            email_placeholder: 'Adresse email',
+            adress_label: 'Addresse,appartement,etc...',
+            postal_code_placeholder: 'Code postal',
+            phone_placeholder: 'N° Téléphone',
+            password_placeholder: 'Mot de passe',
+            confirm_password_placeholder: 'Confirmer mot de passe',
+            registering_label: 'Inscription...',
+            registerd_label: 'Vous êtes inscrit',
+            register_label: "S'inscrire"
+        }
     }
+
 };

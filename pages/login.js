@@ -5,30 +5,28 @@ import HeaderMobile from '../components/shared/headers/HeaderMobile';
 import NavigationList from '../components/shared/navigation/NavigationList';
 import BreadCrumb from '../components/elements/BreadCrumb';
 import Login from '../components/Login';
+import { connect } from 'react-redux';
 
-const breadcrumb = [
-    {
-        text : "Home",
-        url : "/"
-    },
-    {
-        text : "Login"
-    }
-]
+const RegisterPage = (props) => {
+    const { login_breadcrumb } = props;
 
-const RegisterPage = () => (
-    <div className="site-content">
-        <HeaderDefault />
-        <HeaderMobile />
-        <NavigationList />
+    return (
+        <div className="site-content">
+            <HeaderDefault />
+            <HeaderMobile />
+            <NavigationList />
 
-        <main id="homepage-1">
-            <BreadCrumb breacrumb={breadcrumb} />
-            <Login />
-        </main>
-        <FooterFullwidth />
-    </div>
-);
+            <main id="homepage-1">
+                <BreadCrumb breacrumb={login_breadcrumb} />
+                <Login />
+            </main>
+            <FooterFullwidth />
+        </div>
+    )
 
+}
+function mapStateToProps(state) {
+    return state.lang.langData.login_page;
+}
 
-export default RegisterPage;
+export default connect(mapStateToProps)(RegisterPage);

@@ -16,8 +16,8 @@ class BestSellers extends Component {
             speed: 500,
             slidesToShow: 7,
             slidesToScroll: 3,
-            autoplay : true , 
-            autoplaySpeed : 2000 ,
+            autoplay: true,
+            autoplaySpeed: 2000,
             nextArrow: <NextArrow />,
             prevArrow: <PrevArrow />,
             responsive: [
@@ -63,7 +63,7 @@ class BestSellers extends Component {
             <div className="ps-product-list">
                 <div className="ps-container">
                     <div className="ps-section__header">
-                        <h3>Best Sellers</h3>
+                        <h3>{this.props.title}</h3>
                     </div>
                     <div className="ps-section__content">
                         <Slider {...carouselSetting} className="ps-carousel outside">
@@ -78,5 +78,5 @@ class BestSellers extends Component {
     }
 }
 
-const mapStateToProps = ({ post }) => ({ post });
+const mapStateToProps = (state) => (state.lang.langData.best_sellers);
 export default connect(mapStateToProps)(BestSellers);

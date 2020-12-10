@@ -70,7 +70,7 @@ class Login extends Component {
     };
 
     render() {
-
+        const { login_section } = this.props;
         const errorsStyle = { marginBottom: '20px' };
         return (
             <div className="ps-my-account">
@@ -81,7 +81,7 @@ class Login extends Component {
 
                         <div className="ps-tab active" id="sign-in">
                             <div className="ps-form__content">
-                                <h5>Log In Your Account</h5>
+                                <h5>{login_section.title}</h5>
 
                                 {
                                     this.state.errors.map(error => {
@@ -127,7 +127,7 @@ class Login extends Component {
                                             onChange={this.onChangeInput}
                                         />
                                         <label htmlFor="remember-me">
-                                            Rememeber me
+                                            {login_section.remember_me_label}
                                         </label>
                                     </div>
                                 </div>
@@ -138,16 +138,16 @@ class Login extends Component {
                                         disabled={this.state.process || this.state.isLogged}
                                     >
                                         {this.state.process && (<LoadingOutlined style={{ marginRight: '15px' }} />)}
-                                        {this.state.process && 'Logging in ...'}
-                                        {this.state.isLogged && ('You are logged')}
-                                        {this.state.process == false && this.state.isLogged == false && ('Login')}
+                                        {this.state.process && login_section.logging_in_label}
+                                        {this.state.isLogged && login_section.logged_label}
+                                        {this.state.process == false && this.state.isLogged == false && login_section.login_label}
                                     </button>
                                 </div>
 
                                 <div>
-                                    You don't have an account yet,
+                                    {login_section.notice}
                                     <Link href="/register">
-                                        <a> Create one</a>
+                                        <a> {login_section.create_account_link}</a>
                                     </Link>
                                 </div>
                             </div>
@@ -162,6 +162,6 @@ class Login extends Component {
 const WrapFormLogin = Form.create()(Login);
 
 const mapStateToProps = state => {
-    return state.auth;
+    return state.lang.langData.login_page;
 };
 export default connect(mapStateToProps)(WrapFormLogin);

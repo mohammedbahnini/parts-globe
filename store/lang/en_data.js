@@ -561,8 +561,10 @@ export const enData = {
         }
     ],
     mini_cart: {
-        sub_total_label: 'Sub Total',
-        no_product_label: 'Empty cart'
+        sub_total_label: 'Sub Total : ',
+        no_product_label: 'Empty cart',
+        view_cart_button_text: 'View cart',
+        checkout_button_text: 'Checkout'
     },
     vihecule_search_home: {
         title: 'Add vehicule to find exact patrs',
@@ -594,6 +596,91 @@ export const enData = {
         }
     },
     top_catalogs: {
-        title: ''
+        title: 'Top gategories'
+    },
+    best_sellers: {
+        title: 'Best sellers'
+    },
+    top_rated: {
+        title: 'Top rated'
+    },
+    footer: {
+        contact_us: {
+            title: 'Contact us',
+            week_days_label: 'Weekdays',
+            saturday_label: 'Saturday'
+        },
+        quick_links: {
+            title: 'Quick links',
+            policy_label: 'Policy',
+            term_and_conditions_label: 'Terms and conditions',
+            shipping_label: 'Shipping',
+            return_label: 'Return',
+            faqs_label: 'FAQs'
+        },
+        company: {
+            title: 'Company',
+            about_us_label: 'About us',
+            affiliate_label: 'Affiliate',
+            career_label: 'Career',
+            contact_label: 'Contact'
+        },
+        buesiness: {
+            title: 'Bussniess',
+            our_press_label: 'Our press',
+            checkout_label: 'Checkout',
+            my_account_label: 'My account',
+            shop_label: 'Shop'
+        }
+    },
+    search_header: {
+        placeholder: `I'am shoping for...`,
+        button_text: 'Search'
+    },
+    login_page: {
+        login_breadcrumb: [
+            {
+                text: "Home",
+                url: "/"
+            },
+            {
+                text: "Login"
+            }
+        ],
+        login_section: {
+            title: 'Log In Your Account',
+            remember_me_label: 'Remember me',
+            notice: `You don't have an account yet,`,
+            create_account_link: 'Create one',
+            logging_in_label: 'Logging in ...',
+            logged_label: 'You are logged',
+            login_label: 'Login'
+        }
+    },
+    register_page: {
+        breadcrumb: [
+            {
+                text: "Home",
+                url: "/"
+            },
+            {
+                text: "Register"
+            }
+        ],
+        register_section: {
+            title: 'Register an account',
+            first_name_placeholder: 'First name',
+            last_name_placeholder: 'Last name',
+            email_placeholder: 'Email address',
+            adress_label: 'Address,appartement,etc...',
+            postal_code_placeholder: 'Postal code',
+            phone_placeholder: 'Phone number',
+            password_placeholder: 'Password',
+            confirm_password_placeholder: 'Confirm password',
+            registering_label: 'Registring...',
+            registerd_label: 'You are registred',
+            register_label: 'Register'
+        }
     }
+
 };
