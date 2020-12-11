@@ -21,7 +21,7 @@ class LanguageSwicher extends Component {
         return (
             <div className="ps-dropdown language">
                 <a href='#' onClick={(e) => this.changeLangague(e, currentLang.id)}>
-                    <img src={`/static/img/flag/${currentLang.id}.png`} alt="" />
+                    <img src={`/static/img/flag/${currentLang.id}.png`} alt="" style={{ 'margin-right': '10px' }} />
                     {currentLang.name}
                 </a>
                 <ul className="ps-dropdown-menu">
@@ -29,7 +29,7 @@ class LanguageSwicher extends Component {
                         return (
                             <li key={lang.id}>
                                 <a href='#' onClick={(e) => this.changeLangague(e, lang.id)}>
-                                    <img src={`/static/img/flag/${lang.id}.png`} alt="" />
+                                    <img src={`/static/img/flag/${lang.id}.png`} alt="" style={{ 'margin-right': '10px' }} />
                                     {lang.name}
                                 </a>
                             </li>
