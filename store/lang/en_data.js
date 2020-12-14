@@ -681,6 +681,131 @@ export const enData = {
             registerd_label: 'You are registred',
             register_label: 'Register'
         }
+    },
+    navigation_list: {
+        menu_label: 'Menu',
+        categories_label: 'Categories',
+        search_label: 'Search',
+        cart_label: 'Cart',
+        panel_menu: {
+            title: 'Menu'
+        },
+        panel_cart: {
+            title: 'Shopping cart',
+            no_product_label: 'Empty cart',
+            sub_total_label: 'Sub total',
+            view_cart_label: 'View cart',
+            checkout_label: 'Checkout'
+        },
+        panel_search: {
+            placeholder: 'Search for something ...'
+        },
+        panel_categories: {
+            title: 'Categories'
+        }
+    },
+    accountLinks: [
+        {
+            text: 'Account Information',
+            url: '/account/user-information',
+            icon: 'icon-user',
+        },
+        {
+            text: 'Notifications',
+            url: '/account/notifications',
+            icon: 'icon-alarm-ringing',
+        },
+        {
+            text: 'Orders',
+            url: '/account/orders',
+            icon: 'icon-papers',
+        }
+    ],
+    search_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Search Result',
+            }
+        ],
+        result_label: 'Products found',
+        no_products: 'Not found! Try with another keyword.',
+        brand_widget_title: 'By brand',
+        price_wisget_title: 'By price',
+        price_filter_label: 'Price',
+        table_columns: {
+            detail_header: 'Detail',
+            warehouse_header: 'Warehouse',
+            count_header: 'Count',
+            terme_header: 'Terme',
+            price_header: 'Price'
+
+        },
+        product_item: {
+            add_to_cart_label: 'Add to cart'
+        }
+    },
+    newsletter: {
+        title: 'Newsletter',
+        text: 'Subcribe to get information about products and coupons',
+        input: {
+            placeholder: 'Email adress',
+            button_text: 'Subscribe'
+        }
+    },
+    user_information_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'User Information',
+            },
+        ],
+        active_link: 'Account Information',
+        title: 'Account information',
+        first_name_label: 'First name :',
+        first_name_placeholder: 'First name',
+        last_name_label: 'Last name :',
+        last_name_placeholder: 'Last name',
+        address_label: 'Address :',
+        address_placeholder: 'Address',
+        phone_number_label: 'Phone number :',
+        phone_number_placeholder: 'Phone number',
+        email_label: 'Email :',
+        email_placeholder: 'Email'
+
+    },
+    accout_menu_sidebar: {
+        menu: [
+            {
+                text: 'Account Information',
+                url: '/account/user-information',
+                icon: 'icon-user',
+            },
+            {
+                text: 'Edit Password',
+                url: '/account/edit-password',
+                icon: 'icon-lock',
+            },
+            {
+                text: 'Notifications',
+                url: '/account/notifications',
+                icon: 'icon-alarm-ringing',
+            },
+            {
+                text: 'Orders',
+                url: '/account/orders',
+                icon: 'icon-papers',
+            }
+        ],
+        hello_label: 'Hello',
+        logout_label: 'Logout'
     }
+
 
 };

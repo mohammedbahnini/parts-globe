@@ -35,24 +35,7 @@ class AccountQuickLinks extends Component {
     }
 
     render() {
-        const accountLinks = [
-            {
-                text: 'Account Information',
-                url: '/account/user-information',
-                icon: 'icon-user',
-            },
-            {
-                text: 'Notifications',
-                url: '/account/notifications',
-                icon: 'icon-alarm-ringing',
-            },
-            {
-                text: 'Orders',
-                url: '/account/orders',
-                icon: 'icon-papers',
-            }
-        ];
-
+        const { accountLinks } = this.props.lang.langData;
         const isLoggedIn = this.props.auth.isLoggedIn;
         const client = this.state;
         const { langData } = this.props.lang;
@@ -77,7 +60,7 @@ class AccountQuickLinks extends Component {
                                 <a
                                     href="#"
                                     onClick={this.handleLogout.bind(this)}>
-                                    Logout
+                                    {langData.logout_label}
                                 </a>
                             </li>
                         </ul>

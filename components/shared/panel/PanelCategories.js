@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, } from 'antd';
 import Link from 'next/link';
+import { connect } from 'react-redux';
 
 const { SubMenu } = Menu;
 
@@ -28,7 +29,7 @@ class PanelCategories extends Component {
     };
 
     render() {
-        const shopCategories = [
+        /*const shopCategories = [
             {
                 text: 'All Products',
                 url: '/shop',
@@ -77,11 +78,13 @@ class PanelCategories extends Component {
                 text: 'Cars & Motocycles',
                 url: '/shop?category=cars',
             },
-        ];
+        ];*/
+        const { shopCategories } = this.props;
+
         return (
             <div className="ps-panel__wrapper">
                 <div className="ps-panel__header">
-                    <h3>Categories</h3>
+                    <h3>{this.props.panel_categories.title}</h3>
                 </div>
                 <div className="ps-panel__content">
                     <Menu
@@ -102,4 +105,11 @@ class PanelCategories extends Component {
     }
 }
 
-export default PanelCategories;
+const mapStateToProps = (state) => {
+    return {
+        panel_categories: state.lang.langData.navigation_list.panel_categories,
+        shopCategories: state.lang.langData.product_categories
+    }
+}
+
+export default connect(mapStateToProps)(PanelCategories);

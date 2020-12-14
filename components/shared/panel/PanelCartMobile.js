@@ -17,11 +17,13 @@ class PanelCartMobile extends Component {
     };
 
     render() {
-        const { amount, cartItems } = this.props;
+        const { amount, cartItems } = this.props.cart;
+        const { panel_cart } = this.props;
+
         return (
             <div className="ps-panel--wrapper">
                 <div className="ps-panel__header">
-                    <h3>Shopping Cart</h3>
+                    <h3>{panel_cart.title}</h3>
                 </div>
                 <div className="ps-panel__content">
                     <div className="ps-cart--mobile">
@@ -59,35 +61,29 @@ class PanelCartMobile extends Component {
                                                     {product.title}
                                                 </a>
                                             </Link>
-                                            <p>
-                                                <strong>Sold by:</strong>{' '}
-                                                {product.vendor}
-                                            </p>
-                                            <small>
-                                                {product.quantity} x $
-                                                {product.price}
-                                            </small>
+                                            <br />
+                                            <small>{product.quantity} x {product.price} $</small>
                                         </div>
                                     </div>
                                 ))
                             ) : (
-                                <div className="ps-cart__content">
-                                    <div className="ps-cart__items">
-                                        <span>No products in cart</span>
+                                    <div className="ps-cart__content">
+                                        <div className="ps-cart__items">
+                                            <span>{panel_cart.no_product_label}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
                         </div>
                         <div className="ps-cart__footer">
                             <h3>
-                                Sub Total:<strong>${amount}</strong>
+                                {panel_cart.sub_total_label} : <strong>{amount} $</strong>
                             </h3>
                             <figure>
                                 <Link href="/account/shopping-cart">
-                                    <a className="ps-btn">View Cart</a>
+                                    <a className="ps-btn">{panel_cart.view_cart_label}</a>
                                 </Link>
                                 <Link href="/account/shopping-cart">
-                                    <a className="ps-btn">Checkout</a>
+                                    <a className="ps-btn">{panel_cart.checkout_label}</a>
                                 </Link>
                             </figure>
                         </div>
@@ -99,6 +95,9 @@ class PanelCartMobile extends Component {
 }
 
 const mapStateToProps = state => {
-    return state.cart;
+    return {
+        cart: state.cart,
+        panel_cart: state.lang.langData.navigation_list.panel_cart
+    }
 };
 export default connect(mapStateToProps)(PanelCartMobile);

@@ -15,7 +15,7 @@ class PanelMenu extends Component {
     rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
     state = {
-        openKeys: [],
+        openKeys: []
     };
 
     onOpenChange = openKeys => {
@@ -32,10 +32,13 @@ class PanelMenu extends Component {
     };
 
     render() {
+        const { title } = this.props.panel_menu;
+        const { menuPrimary } = this.props;
+
         return (
             <div className="ps-panel__wrapper">
                 <div className="ps-panel__header">
-                    <h3>Menu</h3>
+                    <h3>{title}</h3>
                 </div>
                 <div className="ps-panel__content">
                     <Menu
@@ -43,7 +46,7 @@ class PanelMenu extends Component {
                         openKeys={this.state.openKeys}
                         onOpenChange={this.onOpenChange}
                     >
-                        {menuPrimary.menu_1.map(item => {
+                        {menuPrimary.map(item => {
                             if (item.subMenu) {
                                 return (
                                     <SubMenu
@@ -94,10 +97,10 @@ class PanelMenu extends Component {
                                                 l<a>{item.text}</a>
                                             </Link>
                                         ) : (
-                                            <Link href={item.url} as={item.alias}>
-                                                <a>{item.text}</a>
-                                            </Link>
-                                        )}
+                                                <Link href={item.url} as={item.alias}>
+                                                    <a>{item.text}</a>
+                                                </Link>
+                                            )}
                                     </Menu.Item>
                                 );
                             }
@@ -111,7 +114,10 @@ class PanelMenu extends Component {
 }
 
 const mapStateToProps = state => {
-    return state.setting;
+    return {
+        panel_menu: state.lang.langData.navigation_list.panel_menu,
+        menuPrimary: state.lang.langData.menuPrimary
+    }
 };
 
 export default connect(mapStateToProps)(PanelMenu);

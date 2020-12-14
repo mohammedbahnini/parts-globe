@@ -7,31 +7,24 @@ import BreadCrumb from '../../components/elements/BreadCrumb';
 import SearchResult from '../../components/partials/shop/SearchResult';
 import HeaderMobile from '../../components/shared/headers/HeaderMobile';
 import NavigationList from '../../components/shared/navigation/NavigationList';
-
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-class SearchResultsPage extends  React.Component  {
 
+class SearchResultsPage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    render()
-    {
-        const breadCrumb = [
-            {
-                text: 'Home',
-                url: '/',
-            },
-            {
-                text: 'Search Result',
-            },
-        ];
+    render() {
+        const { breadcrumb } = this.props;
 
-      
         return (
             <div className="site-content">
                 <HeaderDefault />
                 <HeaderMobile />
                 <NavigationList />
-                <BreadCrumb breacrumb={breadCrumb} />
+                <BreadCrumb breacrumb={breadcrumb} />
                 <div className="ps-page--shop" id="shop-sidebar">
                     <div className="container">
                         <SearchResult />
@@ -41,12 +34,17 @@ class SearchResultsPage extends  React.Component  {
                 <FooterDefault />
             </div>
         )
-        
+
     }
 
 
 }
 
+const mapStateToProps = (state) => {
+    return {
+        breadcrumb: state.lang.langData.search_page.breadcrumb
+    }
+}
 
 
-export default SearchResultsPage;
+export default connect(mapStateToProps)(SearchResultsPage);

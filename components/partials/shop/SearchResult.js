@@ -14,6 +14,7 @@ import axios from 'axios';
 import { Spin, Checkbox, Slider } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
+
 class SearchResult extends Component {
     state = {
         listView: true,
@@ -119,7 +120,7 @@ class SearchResult extends Component {
         return (
             <ul className="pagination">
                 {this.state.pageNumbers.map(page => {
-                    <li className={page == currentPage ? 'active' : ''} onClick={() => this.getCurrentProducts(page)}>
+                    <li className={page == currentPage ? 'active' : ''} onClick={() => this.getCurrentProducts(page)} key={page}>
                         <a href="#">1</a>
                     </li>
                 })}
@@ -151,25 +152,24 @@ class SearchResult extends Component {
         let currentProducts = this.state.currentProducts;
         const listView = this.state.listView;
         const pages = [];
+        const { search_page } = this.props;
+
         this.state.pageNumbers.map(page => {
             pages.push(
-                <li className={this.state.currentPage == page ? 'active' : ''} onClick={() => self.getCurrentProducts(page)} >
+                <li className={this.state.currentPage == page ? 'active' : ''} onClick={() => self.getCurrentProducts(page)} key={page}>
                     <a>{page}</a>
                 </li>
             );
         });
 
-
-        //console.log(allProducts);
         const loaderIcon = <LoadingOutlined style={{ fontSize: 100, color: 'black' }} spin />;
 
         // init the view condionaly
-        const loader =
-            (
-                <div className="ps-search-loader">
-                    <Spin indicator={loaderIcon} />
-                </div>
-            );
+        const loader = (
+            <div className="ps-search-loader">
+                <Spin indicator={loaderIcon} />
+            </div>
+        );
 
         const reasultHeader = filtredProducts && filtredProducts.length > 0 ?
             (
@@ -177,13 +177,13 @@ class SearchResult extends Component {
                     <strong>
                         {filtredProducts ? filtredProducts.length : 0}
                     </strong>
-                    <span className="ml-1">Products found</span>
+                    <span className="ml-1">{search_page.result_label}</span>
                 </p>
 
             )
             :
             (
-                <p>Not found! Try with another keyword.</p>
+                <p>{search_page.no_products}</p>
             );
 
 
@@ -193,7 +193,7 @@ class SearchResult extends Component {
                 <div className="ps-layout__left">
 
                     <aside className="widget widget_shop">
-                        <h4 className="widget-title" style={{ color: 'black !important' }}>By Brands</h4>
+                        <h4 className="widget-title" style={{ color: 'black !important' }}>{search_page.brand_widget_title}</h4>
                         <figure>
                             <Checkbox.Group
                                 options={brands}
@@ -201,7 +201,7 @@ class SearchResult extends Component {
                             />
                         </figure>
                         <figure>
-                            <h4 className="widget-title" style={{ color: 'black !important' }}>By Price</h4>
+                            <h4 className="widget-title" style={{ color: 'black !important' }}>{search_page.price_wisget_title}</h4>
                             <Slider
                                 range
                                 defaultValue={[0, 99999]}
@@ -209,7 +209,7 @@ class SearchResult extends Component {
                                 onAfterChange={(e) => this.handleChangePrice(e)}
                             />
                             <p>
-                                Price: {this.state.priceMin} .p - {this.state.priceMax} .p
+                                {search_page.price_filter_label} : {this.state.priceMin} .p - {this.state.priceMax} .p
                         </p>
                         </figure>
                     </aside>
@@ -293,6 +293,10 @@ class SearchResult extends Component {
 }
 
 const mapStateToProps = state => {
-    return state.product;
+    return {
+        product: state.product,
+        search_page: state.lang.langData.search_page
+    }
 };
+
 export default withRouter(connect(mapStateToProps)(SearchResult));

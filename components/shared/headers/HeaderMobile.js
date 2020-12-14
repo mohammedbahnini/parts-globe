@@ -30,7 +30,7 @@ class HeaderMobile extends Component {
     render() {
         return (
             <header className="header header--mobile">
-                <div className="header__topp" style={{ display: 'none' }}>
+                {/** <div className="header__topp" style={{ display: 'none' }}>
                     <div className="header__left">
                         <p>Welcome to Martfury Online Shopping Store !</p>
                     </div>
@@ -54,9 +54,9 @@ class HeaderMobile extends Component {
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="ps-settings--mobile" style={{ 'background-color': '#f4f5f5', 'padding': '10px;' }}>
+                <div className="ps-settings--mobile" style={{ 'backgroundColor': '#f4f5f5', 'padding': '10px' }}>
                     <LanguageSwicher />
                 </div>
 

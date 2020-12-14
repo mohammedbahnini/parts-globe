@@ -73,14 +73,8 @@ class MiniCart extends Component {
                                                     {product.title}
                                                 </a>
                                             </Link>
-                                            <p>
-                                                <strong>Sold by:</strong>{' '}
-                                                {product.vendor}
-                                            </p>
-                                            <small>
-                                                {product.quantity} x $
-                                                  {product.price}
-                                            </small>
+                                            <br />
+                                            <small>{product.quantity} x {product.price} $</small>
                                         </div>
                                     </div>
                                 ))
@@ -88,8 +82,7 @@ class MiniCart extends Component {
                         </div>
                         <div className="ps-cart__footer">
                             <h3>
-                                {langData.mini_cart.sub_total_label}$
-                                <strong>${amount ? amount : 0}</strong>
+                                {langData.mini_cart.sub_total_label}<strong>{amount ? amount : 0} $</strong>
                             </h3>
                             <figure>
                                 <Link href="/account/shopping-cart" as="/cart">

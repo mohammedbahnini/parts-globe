@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import Newsletters from '../../components/partials/commons/Newletters';
 import FooterDefault from '../../components/shared/footers/FooterDefault';
@@ -10,17 +11,7 @@ import HeaderMobile from '../../components/shared/headers/HeaderMobile';
 import NavigationList from '../../components/shared/navigation/NavigationList';
 
 const UserInformationPage = (props) => {
-    const client = props.client;
-
-    const breadCrumb = [
-        {
-            text: 'Home',
-            url: '/',
-        },
-        {
-            text: 'User Information',
-        },
-    ];
+    const { client, breadcrumb } = props;
 
     return (
         <div className="site-content">
@@ -28,7 +19,7 @@ const UserInformationPage = (props) => {
             <HeaderMobile />
             <NavigationList />
             <div className="ps-page--my-account">
-                <BreadCrumb breacrumb={breadCrumb} />
+                <BreadCrumb breacrumb={breadcrumb} />
                 <UserInformation client={client} />
             </div>
             <Newsletters layout="container" />
@@ -38,13 +29,23 @@ const UserInformationPage = (props) => {
 };
 
 
-export async function getServerSideProps(ctx){
+export async function getServerSideProps(ctx) {
     // getting client id 
     const clientID = ctx.req.session.client_id;
-    const response = await axios.post(`${process.env.API}/user/info` , {
-        client_id : clientID
+    const response = await axios.post(`${process.env.API}/user/info`, {
+        client_id: clientID
     });
-    return { props : { client : response.data.client}};
+    return {
+        props: {
+            client: response.data.client
+        }
+    };
 }
 
-export default UserInformationPage;
+const mapStateToProps = (state) => {
+    return {
+        breadcrumb: state.lang.langData.user_information_page.breadcrumb
+    }
+}
+
+export default connect(mapStateToProps)(UserInformationPage);

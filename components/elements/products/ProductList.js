@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ProductItem from './ProductItem';
+import { connect } from 'react-redux';
+
 
 
 class ProductList extends Component {
@@ -8,25 +10,27 @@ class ProductList extends Component {
         super(props);
     }
 
+
     render() {
-        const  products  = this.props.products;
-        
+        const products = this.props.products;
+        const { table_columns } = this.props;
+
         return (
-           
+
             <React.Fragment>
                 <table className="product-list">
                     <thead>
                         <tr>
-                            <th className="product-detail-col">Detail</th>
-                            <th className="text-center">Warehouse</th>
-                            <th className="text-center">Count</th>
-                            <th className="text-center">Terme</th>
-                            <th className="text-center">Price</th>
+                            <th className="product-detail-col">{table_columns.detail_header}</th>
+                            <th className="text-center">{table_columns.warehouse_header}</th>
+                            <th className="text-center">{table_columns.count_header}</th>
+                            <th className="text-center">{table_columns.terme_header}</th>
+                            <th className="text-center">{table_columns.price_header}</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map(item=>{
+                        {products.map(item => {
                             return <ProductItem product={item} key={item.id} />
                         })}
                     </tbody>
@@ -36,5 +40,10 @@ class ProductList extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        table_columns: state.lang.langData.search_page.table_columns
+    }
+}
 
-export default ProductList;
+export default connect(mapStateToProps)(ProductList);

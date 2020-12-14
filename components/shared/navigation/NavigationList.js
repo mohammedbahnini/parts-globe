@@ -104,36 +104,31 @@ class NavigationList extends Component {
                 </Drawer>
                 <div className="navigation__content">
                     <a
-                        className={`navigation__item ${
-                            menuDrawer === true ? 'active' : ''
-                        }`}
+                        className={`navigation__item ${menuDrawer === true ? 'active' : ''
+                            }`}
                         onClick={this.handleShowMenuDrawer}>
                         <i className="icon-menu"></i>
-                        <span> Menu</span>
+                        <span> {this.props.menu_label}</span>
                     </a>
                     <a
-                        className={`navigation__item ${
-                            categoriesDrawer === true ? 'active' : ''
-                        }`}
+                        className={`navigation__item ${categoriesDrawer === true ? 'active' : ''
+                            }`}
                         onClick={this.handleShowCategoriesDrawer}>
                         <i className="icon-list4"></i>
-                        <span> Categories</span>
+                        <span> {this.props.categories_label}</span>
                     </a>
                     <a
-                        className={`navigation__item ${
-                            searchDrawer === true ? 'active' : ''
-                        }`}
+                        className={`navigation__item ${searchDrawer === true ? 'active' : ''
+                            }`}
                         onClick={this.handleShowSearchDrawer}>
                         <i className="icon-magnifier"></i>
-                        <span> Search</span>
+                        <span> {this.props.search_label}</span>
                     </a>
                     <a
-                        className={`navigation__item ${
-                            cartDrawer === true ? 'active' : ''
-                        }`}
+                        className={`navigation__item ${cartDrawer === true ? 'active' : ''}`}
                         onClick={this.handleShowCartDrawer}>
                         <i className="icon-bag2"></i>
-                        <span> Cart</span>
+                        <span> {this.props.cart_label}</span>
                     </a>
                 </div>
             </div>
@@ -142,6 +137,7 @@ class NavigationList extends Component {
 }
 
 const mapStateToProps = state => {
-    return state.setting;
+    return state.lang.langData.navigation_list;
 };
+
 export default connect(mapStateToProps)(NavigationList);
