@@ -5,6 +5,7 @@ import AccountMenuSidebar from './modules/AccountMenuSidebar';
 import { Alert , notification } from 'antd';
 import  {LoadingOutlined} from '@ant-design/icons';
 import Router from 'next/router';
+import { connect } from 'react-redux';
 
 class EditPassword extends Component {
     constructor(props) {
@@ -75,6 +76,8 @@ class EditPassword extends Component {
 
     render() {
         const errorsStyle = {marginBottom : '20px'};
+        const {edit_password_page }=this.props;
+
         return (
        <Fragment>
            {this.state && (
@@ -83,8 +86,7 @@ class EditPassword extends Component {
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="ps-section__left">
-
-                                <AccountMenuSidebar activeLink='Edit Password' />
+                                <AccountMenuSidebar activeLink={edit_password_page.active_link} />
                             </div>
                         </div>
                         <div className="col-lg-8">
@@ -95,7 +97,7 @@ class EditPassword extends Component {
                                     className="ps-form--account-setting"
                                     onSubmit={(e)=>this.handleUpdate(e)}>
                                     <div className="ps-form__header">
-                                        <h3>Edit Password</h3>
+                                        <h3>{edit_password_page.title}</h3>
                                     </div>
                                     <div className="ps-form__content">
                                         {this.state.errors.map( error => {
@@ -108,7 +110,7 @@ class EditPassword extends Component {
                                         }
                                         <div className="row">
                                             <div className="col-sm-6">
-                                                <Form.Item label="Old Password">
+                                                <Form.Item label={edit_password_page.old_password_label}>
                                                     <Input
                                                         className="form-control"
                                                         type="password"
@@ -124,7 +126,7 @@ class EditPassword extends Component {
                                         <div className="row">
                                             <div className="col-sm-6">
                                                 <div className="form-group">
-                                                    <Form.Item label="New Password">
+                                                    <Form.Item label={edit_password_page.new_password_label}>
                                                     <Input
                                                         className="form-control"
                                                         type="password"
@@ -140,7 +142,7 @@ class EditPassword extends Component {
                                         <div className="row">                      
                                             <div className="col-sm-6">
                                                 <div className="form-group">
-                                                <Form.Item label="Confirm New Password">
+                                                <Form.Item label={edit_password_page.confirm_new_password_label}>
                                                         
                                                         <Input
                                                             className="form-control"
@@ -157,8 +159,8 @@ class EditPassword extends Component {
                                         <div className="form-group submit">
                                             <button className="ps-btn">
                                                 {this.state.updating && (<LoadingOutlined style={{marginRight:'15px'}} />)}
-                                                {this.state.updating && 'Updating...'}
-                                                {this.state.updating == false && 'Update'}
+                                                {this.state.updating && edit_password_page.button_updating_state_text}
+                                                {this.state.updating == false && edit_password_page.button_update_state_text}
                                             </button>
                                         </div>
                                     </div>
@@ -175,4 +177,10 @@ class EditPassword extends Component {
     }
 }
 
-export default EditPassword;
+const mapStateToProps = state =>{
+    return {
+        edit_password_page : state.lang.langData.edit_password_page
+    }
+}
+
+export default  connect(mapStateToProps)(EditPassword);

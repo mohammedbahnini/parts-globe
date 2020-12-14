@@ -777,7 +777,11 @@ export const enData = {
         phone_number_label: 'Phone number :',
         phone_number_placeholder: 'Phone number',
         email_label: 'Email :',
-        email_placeholder: 'Email'
+        email_placeholder: 'Email' , 
+        postal_code_label : 'Postal code' , 
+        postal_code_placeholder : 'Postal code',
+        button_update_state_text : 'Update' ,
+        button_updating_state_text : 'Updating ...'
 
     },
     accout_menu_sidebar: {
@@ -805,6 +809,24 @@ export const enData = {
         ],
         hello_label: 'Hello',
         logout_label: 'Logout'
+    } , 
+    edit_password_page : {
+        breadcrumb : [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Edit Password',
+            },
+        ] , 
+        active_link : 'Edit Password' , 
+        title : 'Edit password' , 
+        old_password_label : 'Old password' , 
+        new_password_label : 'New password', 
+        confirm_new_password_label : 'Confirm new password',
+        button_update_state_text : 'Update' ,
+        button_updating_state_text : 'Updating ...'
     }
 
 

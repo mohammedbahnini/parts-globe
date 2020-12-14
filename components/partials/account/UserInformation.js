@@ -4,6 +4,7 @@ import axios from 'axios';
 import AccountMenuSidebar from './modules/AccountMenuSidebar';
 import { Alert , notification } from 'antd';
 import  {LoadingOutlined} from '@ant-design/icons';
+import { connect } from 'react-redux';
 
 class UserInformation extends Component {
     constructor(props) {
@@ -64,44 +65,7 @@ class UserInformation extends Component {
     }
 
     render() {
-        const accountLinks = [
-            {
-                text: 'Account Information',
-                url: '/account/user-information',
-                icon: 'icon-user',
-                active: true,
-            },
-            {
-                text: 'Notifications',
-                url: '/account/notifications',
-                icon: 'icon-alarm-ringing',
-            },
-            {
-                text: 'Invoices',
-                url: '/account/invoices',
-                icon: 'icon-papers',
-            },
-            {
-                text: 'Address',
-                url: '/account/address',
-                icon: 'icon-map-marker',
-            },
-            {
-                text: 'Recent Viewed Product',
-                url: '/account/recent-viewed-product',
-                icon: 'icon-store',
-            },
-            {
-                text: 'Wishlist',
-                url: '/account/wishlist',
-                icon: 'icon-heart',
-            },
-            {
-                text : 'Orders' ,
-                url : '/account/orders',
-                icon :'icon-folder'
-            }
-        ];
+        const {user_information_page} = this.props;
 
         const errorsStyle = {marginBottom : '20px'};
         return (
@@ -113,7 +77,7 @@ class UserInformation extends Component {
                         <div className="col-lg-4">
                             <div className="ps-section__left">
 
-                                <AccountMenuSidebar activeLink='Account Information' />
+                                <AccountMenuSidebar activeLink={user_information_page.active_link} />
                             </div>
                         </div>
                         <div className="col-lg-8">
@@ -123,7 +87,7 @@ class UserInformation extends Component {
                                     className="ps-form--account-setting"
                                     onSubmit={this.handleUpdate}>
                                     <div className="ps-form__header">
-                                        <h3>Account Information</h3>
+                                        <h3>{user_information_page.title}</h3>
                                     </div>
                                     <div className="ps-form__content">
                                     {this.state.errors.map( error => {
@@ -137,11 +101,11 @@ class UserInformation extends Component {
                                         <div className="form-group">
                                             <div className="row">
                                                 <div className="col-sm-6">
-                                                    <Form.Item label="First name">
+                                                    <Form.Item label={user_information_page.first_name_label}>
                                                         <Input
                                                             className="form-control"
                                                             type="text"
-                                                            placeholder="First name"
+                                                            placeholder={user_information_page.first_name_placeholder}
                                                             name="first_name"
                                                             onChange={(e)=>this.handleInput(e)}
                                                             value={this.state.first_name}
@@ -150,11 +114,11 @@ class UserInformation extends Component {
                                                 </div>
 
                                                 <div className="col-sm-6">
-                                                    <Form.Item label="Last name">
+                                                    <Form.Item label={user_information_page.last_name_label}>
                                                         <Input
                                                             className="form-control"
                                                             type="text"
-                                                            placeholder="Last name"
+                                                            placeholder={user_information_page.last_name_placeholder}
                                                             name="last_name"
                                                             onChange={(e)=>this.handleInput(e)}
                                                             value={this.state.last_name}
@@ -165,11 +129,11 @@ class UserInformation extends Component {
                                         </div>
 
                                         <div className="form-group">
-                                            <Form.Item label="Address">
+                                            <Form.Item label={user_information_page.address_label}>
                                                 <Input.TextArea
                                                     className="form-control"
                                                     type="text"
-                                                    placeholder="Address"
+                                                    placeholder={user_information_page.address_placeholder}
                                                     name="address"
                                                     value={this.state.address}
                                                     onChange={(e)=>this.handleInput(e)}
@@ -182,11 +146,11 @@ class UserInformation extends Component {
                                         <div className="row">
                                             <div className="col-sm-6">
                                                 <div className="form-group">
-                                                    <Form.Item label="Phone Number">
+                                                    <Form.Item label={user_information_page.phone_number_label}>
                                                     <Input
                                                         className="form-control"
                                                         type="text"
-                                                        placeholder="Phone number"
+                                                        placeholder={user_information_page.phone_number_placeholder}
                                                         name="phone"
                                                         value={this.state.phone}
                                                         onChange={(e)=>this.handleInput(e)}
@@ -196,12 +160,12 @@ class UserInformation extends Component {
                                             </div>
                                             <div className="col-sm-6">
                                                 <div className="form-group">
-                                                    <Form.Item label="Email">
+                                                    <Form.Item label={user_information_page.email_label}>
                                                       
                                                             <Input
                                                                 className="form-control"
                                                                 type="text"
-                                                                placeholder="Email address"
+                                                                placeholder={user_information_page.email_placeholder}
                                                                 value = {this.state.email}
                                                                 name="email"
                                                                 disabled
@@ -215,12 +179,12 @@ class UserInformation extends Component {
                                             
                                             <div className="col-sm-6">
                                                 <div className="form-group">
-                                                <Form.Item label="Postal code">
+                                                <Form.Item label={user_information_page.postal_code_label}>
                                                       
                                                       <Input
                                                           className="form-control"
                                                           type="text"
-                                                          placeholder="Postal code"
+                                                          placeholder={user_information_page.postal_code_placeholder}
                                                           value = {this.state.postal_code}
                                                           onChange={(e)=>this.handleInput(e)}
                                                           name="postal_code"
@@ -233,8 +197,8 @@ class UserInformation extends Component {
                                         <div className="form-group submit">
                                             <button className="ps-btn">
                                                 {this.state.updating && (<LoadingOutlined style={{marginRight:'15px'}} />)}
-                                                {this.state.updating && 'Updating...'}
-                                                {this.state.updating == false && 'Update'}
+                                                {this.state.updating && user_information_page.button_updating_state_text }
+                                                {this.state.updating == false && user_information_page.button_update_state_text}
                                             </button>
                                         </div>
                                     </div>
@@ -251,4 +215,11 @@ class UserInformation extends Component {
     }
 }
 const WrapFormUserInformation = Form.create()(UserInformation);
-export default WrapFormUserInformation;
+
+const mapStateToProps = (state)=>{
+    return {
+        user_information_page : state.lang.langData.user_information_page
+    }
+}
+
+export default connect(mapStateToProps)(WrapFormUserInformation);

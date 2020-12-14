@@ -6,28 +6,6 @@ import { logOut } from '../../../../store/auth/action';
 import Router from 'next/router';
 import { connect } from 'react-redux';
 
-const data = [
-    {
-        text: 'Account Information',
-        url: '/account/user-information',
-        icon: 'icon-user',
-    },
-    {
-        text: 'Edit Password',
-        url: '/account/edit-password',
-        icon: 'icon-lock',
-    },
-    {
-        text: 'Notifications',
-        url: '/account/notifications',
-        icon: 'icon-alarm-ringing',
-    },
-    {
-        text: 'Orders',
-        url: '/account/orders',
-        icon: 'icon-papers',
-    }
-];
 
 class AccountMenuSidebar extends React.Component  {
     constructor(props)
@@ -56,7 +34,7 @@ class AccountMenuSidebar extends React.Component  {
     }
 
     render(){
-        const {activeLink} = this.props;
+        const {activeLink , accout_menu_sidebar } = this.props;
         const client = this.state;
 
         return (
@@ -66,13 +44,13 @@ class AccountMenuSidebar extends React.Component  {
                  <div className="ps-widget__header">
                      <i className="icon-user" style={{fontSize : '50px'}}></i>
                      <figure>
-                         <figcaption>Hello</figcaption>
+                         <figcaption>{accout_menu_sidebar.hello_label}</figcaption>
                          <p>{client.first_name} {client.last_name}</p>
                      </figure>
                  </div>
                  <div className="ps-widget__content">
                      <ul>
-                         {data.map(link => (
+                         {accout_menu_sidebar.menu.map(link => (
                              <li
                                  key={link.text}
                                  className={link.text === activeLink ? 'active': '' }>
@@ -87,7 +65,7 @@ class AccountMenuSidebar extends React.Component  {
                          <li>
                             <a onClick={this.handleLogout.bind(this)} href="#"> 
                                      <i className="icon-power-switch"></i>
-                                     Logout
+                                     {accout_menu_sidebar.logout_label}
                                  </a>
                          </li>
                      </ul>
@@ -101,7 +79,9 @@ class AccountMenuSidebar extends React.Component  {
 }
 
 const mapStateToProps = state => {
-    return state;
+    return {
+        accout_menu_sidebar : state.lang.langData.accout_menu_sidebar
+    };
 };
 
 export default connect(mapStateToProps)(AccountMenuSidebar);
