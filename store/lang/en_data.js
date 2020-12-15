@@ -777,11 +777,11 @@ export const enData = {
         phone_number_label: 'Phone number :',
         phone_number_placeholder: 'Phone number',
         email_label: 'Email :',
-        email_placeholder: 'Email' , 
-        postal_code_label : 'Postal code' , 
-        postal_code_placeholder : 'Postal code',
-        button_update_state_text : 'Update' ,
-        button_updating_state_text : 'Updating ...'
+        email_placeholder: 'Email',
+        postal_code_label: 'Postal code',
+        postal_code_placeholder: 'Postal code',
+        button_update_state_text: 'Update',
+        button_updating_state_text: 'Updating ...'
 
     },
     accout_menu_sidebar: {
@@ -809,9 +809,9 @@ export const enData = {
         ],
         hello_label: 'Hello',
         logout_label: 'Logout'
-    } , 
-    edit_password_page : {
-        breadcrumb : [
+    },
+    edit_password_page: {
+        breadcrumb: [
             {
                 text: 'Home',
                 url: '/',
@@ -819,14 +819,35 @@ export const enData = {
             {
                 text: 'Edit Password',
             },
-        ] , 
-        active_link : 'Edit Password' , 
-        title : 'Edit password' , 
-        old_password_label : 'Old password' , 
-        new_password_label : 'New password', 
-        confirm_new_password_label : 'Confirm new password',
-        button_update_state_text : 'Update' ,
-        button_updating_state_text : 'Updating ...'
+        ],
+        active_link: 'Edit Password',
+        title: 'Edit password',
+        old_password_label: 'Old password',
+        new_password_label: 'New password',
+        confirm_new_password_label: 'Confirm new password',
+        button_update_state_text: 'Update',
+        button_updating_state_text: 'Updating ...'
+    },
+    cart_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Shopping Cart',
+            },
+        ],
+        title: 'Shopping Cart',
+        product_column: 'Product',
+        warehouse_column: 'Warehouse',
+        price_column: 'Price',
+        quantity_column: 'Quantity',
+        total_column: 'Total',
+        action_column: 'Action',
+        back_to_shop_label: 'Back to shop',
+        total_label: 'Total',
+        button_checkout_label: 'Proceed to checkout'
     }
 
 
