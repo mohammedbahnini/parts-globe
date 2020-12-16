@@ -3,30 +3,15 @@ import Newsletters from '../../components/partials/commons/Newletters';
 import FooterDefault from '../../components/shared/footers/FooterDefault';
 import HeaderDefault from '../../components/shared/headers/HeaderDefault';
 import BreadCrumb from '../../components/elements/BreadCrumb';
-import Payment from '../../components/partials/account/Payment';
 import InjectedCreditCardForm from '../../components/partials/account/CrediCardForm';
 
 import HeaderMobile from '../../components/shared/headers/HeaderMobile';
 import NavigationList from '../../components/shared/navigation/NavigationList';
+import { connect } from 'react-redux';
 
-const PaymentPage = () => {
-    const breadCrumb = [
-        {
-            text: 'Home',
-            url: '/',
-        },
-        {
-            text: 'Shopping Cart',
-            url: '/account/shopping-cart',
-        },
-        {
-            text: 'Checkout Information',
-            url: '/account/checkout',
-        },
-        {
-            text: 'Payment',
-        },
-    ];
+const PaymentPage = (props) => {
+    const { breadCrumb } = props;
+
     return (
         <div className="site-content">
             <HeaderDefault />
@@ -42,4 +27,10 @@ const PaymentPage = () => {
     );
 };
 
-export default PaymentPage;
+const mapStateToProps = state => {
+    return {
+        breadcrumb: state.lang.langData.payment_page.breadcrumb
+    }
+}
+
+export default connect(mapStateToProps)(PaymentPage);

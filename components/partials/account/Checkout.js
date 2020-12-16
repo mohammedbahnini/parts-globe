@@ -9,12 +9,13 @@ class Checkout extends Component {
     }
 
     render() {
-        const { amount, cartTotal, cartItems } = this.props;
+        const { amount, cartTotal, cartItems } = this.props.cart;
+        const { title } = this.props;
         return (
             <div className="ps-checkout ps-section--shopping">
                 <div className="container">
                     <div className="ps-section__header">
-                        <h1>Checkout Information</h1>
+                        <h1>{title}</h1>
                     </div>
                     <div className="ps-section__content">
                         <InjectedForm
@@ -30,6 +31,9 @@ class Checkout extends Component {
 }
 
 const mapStateToProps = state => {
-    return {...state.cart,...state.auth};
+    return {
+        cart: state.cart,
+        title: state.lang.langData.payment_page.tiltle
+    };
 };
 export default connect(mapStateToProps)(Checkout);

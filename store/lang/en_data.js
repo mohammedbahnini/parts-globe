@@ -848,7 +848,69 @@ export const enData = {
         back_to_shop_label: 'Back to shop',
         total_label: 'Total',
         button_checkout_label: 'Proceed to checkout'
+    },
+    payment_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Shopping Cart',
+                url: '/account/shopping-cart',
+            },
+            {
+                text: 'Checkout Information',
+                url: '/account/checkout',
+            },
+            {
+                text: 'Payment',
+            },
+        ],
+        title: 'Checkout Information',
+        contact_information_title: 'Contact information',
+        email_address_label: 'Email address :',
+        phone_number_label: 'Phone number :',
+        first_name_label: 'First name :',
+        last_name_label: 'Last name :',
+        shippinga_address_title: 'Shipping address',
+        address_label: 'Address :',
+        postal_code: 'Postal code :',
+        order_title: 'Your order',
+        product_label: 'Product',
+        subtotal_label: 'Subtotal',
+        total_label: 'Total',
+        payment_method_label: 'Payment method :',
+        pay_now_label: 'Pay now',
+        pay_until_shipping_label: 'Payment until shipping',
+        credit_card_number_label: 'Credit card number :',
+        expary_date_label: 'Expary date :',
+        cvc_label: 'C.V.C :',
+        shipping_method_label: 'Shipping method :',
+        shipping_at_home_label: 'Shipping at home',
+        shipping_at_warehouse_label: 'Shipping at warehouse',
+        save_informations_label: 'Save informations for next purchase',
+        back_to_shipping_label: 'Back to shopping cart',
+        validate_text: 'Validate purchase',
+        validating_text: 'Validating ...',
+        purchase_complete: 'Purchase completed succesfuly'
+    },
+    notification_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Notifications',
+            },
+        ],
+        title: 'Notifications',
+        order_date_label: 'Date order',
+        content_label: 'Content',
+        catgory_label: 'Category',
+        readed_label: 'Readed',
+        action_label: 'Action',
+        active_link: 'Notifications'
     }
-
-
 };

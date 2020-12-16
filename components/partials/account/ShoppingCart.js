@@ -80,7 +80,7 @@ class ShoppingCart extends Component {
                                                             href="/product/[pid]"
                                                             as={`/product/${product.id}`}>
                                                             <a>
-                                                                <img src={process.env.HOST + '/' + product.thumbnail} alt="" />
+                                                                <img src={`${process.env.HOST}/${product.thumbnail}`} alt="" />
                                                             </a>
                                                         </Link>
                                                     </div>
