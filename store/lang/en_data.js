@@ -861,10 +861,6 @@ export const enData = {
             },
             {
                 text: 'Checkout Information',
-                url: '/account/checkout',
-            },
-            {
-                text: 'Payment',
             },
         ],
         title: 'Checkout Information',
@@ -912,5 +908,51 @@ export const enData = {
         readed_label: 'Readed',
         action_label: 'Action',
         active_link: 'Notifications'
+    },
+    orders_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Orders',
+            },
+        ],
+        title: 'Orders',
+        date_column: 'Date',
+        amount_colmn: 'Amount',
+        status_column: 'Status',
+        recieved_at_column: 'Recieved at',
+        detail_column: 'Detail',
+        button_detail_text: 'Detail',
+        active_link: 'Orders',
+        recieved_label: 'Recieved',
+        new_label: 'New'
+    },
+    order_detail_page: {
+        breadcrumb: [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Order detail',
+            },
+        ],
+        active_link: 'Orders',
+        title: 'Order n° ',
+        order_recieved_label: 'Recived',
+        order_not_recieved_label: 'Not recieved yet',
+        address_title: 'Address',
+        address_label: 'Address',
+        phone_label: 'Phone',
+        payment_title: 'Payment',
+        payment_method_label: 'Payment method',
+        product_column: 'Product',
+        price_column: 'Price',
+        quantity: 'Quantity',
+        amount_column: 'Amount',
+        back_to_orders: 'Back to orders'
     }
 };

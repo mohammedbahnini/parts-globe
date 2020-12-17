@@ -33,7 +33,7 @@ class Checkout extends Component {
 const mapStateToProps = state => {
     return {
         cart: state.cart,
-        title: state.lang.langData.payment_page.tiltle
+        title: state.lang.langData.payment_page.title
     };
 };
 export default connect(mapStateToProps)(Checkout);

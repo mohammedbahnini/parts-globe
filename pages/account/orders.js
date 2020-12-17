@@ -9,27 +9,19 @@ import HeaderMobile from '../../components/shared/headers/HeaderMobile';
 import NavigationList from '../../components/shared/navigation/NavigationList';
 import axios from 'axios';
 import Link from 'next/link';
+import { connect } from 'react-redux';
 
 const OrdersPage = (props) => {
-    const breadCrumb = [
-        {
-            text: 'Home',
-            url: '/',
-        },
-        {
-            text: 'Invoices',
-        },
-    ];
-    console.log('orders');
-    console.log(props);
-    const { orders } = props;
+
+    const { breadcrumb, orders } = props;
+
     return (
         <div className="site-content">
             <HeaderDefault />
             <HeaderMobile />
             <NavigationList />
             <div className="ps-page--my-account">
-                <BreadCrumb breacrumb={breadCrumb} />
+                <BreadCrumb breacrumb={breadcrumb} />
                 <Orders orders={orders} />
             </div>
             <Newsletters layout="container" />
@@ -39,13 +31,19 @@ const OrdersPage = (props) => {
 };
 
 
-export async function getServerSideProps(ctx){
+export async function getServerSideProps(ctx) {
 
     // getting client id 
     const clientID = ctx.req.session.client_id;
     const response = await axios.get(`${process.env.API}/order/get/${clientID}`);
     //console.log(response.data);
-    return { props : { orders : response.data}};
+    return { props: { orders: response.data } };
 }
 
-export default OrdersPage;
+function mapStateToProps(state) {
+    return {
+        breadcrumb: state.lang.langData.orders_page.breadcrumb
+    }
+}
+
+export default connect(mapStateToProps)(OrdersPage);

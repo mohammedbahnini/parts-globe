@@ -281,7 +281,7 @@ class FormCheckoutInformation extends Component {
                                 })}
 
                                 <div className="ps-form__billing-info">
-                                    <h3 className="ps-form__heading">{payment_page.contact_information_titles}</h3>
+                                    <h3 className="ps-form__heading">{payment_page.contact_information_title}</h3>
                                     <div className="form-group">
                                         <div className="row">
                                             <div className="col-sm-6">

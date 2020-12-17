@@ -5,7 +5,11 @@ import { enData } from './en_data';
 // export data in reducer depending on action 
 
 export const initialState = {
-    currentLang: { id: enData.id, name: enData.name },
+    currentLang:
+    {
+        id: enData.id,
+        name: enData.name
+    },
     langs: enData.langsMenu,
     langData: enData
 };
@@ -25,7 +29,7 @@ const reducer = (state = initialState, action) => {
                 ...action.payload
             };
         default:
-            return initialState;
+            return state;
     }
 }
 

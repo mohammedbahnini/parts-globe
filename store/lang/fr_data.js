@@ -668,7 +668,7 @@ export const frData = {
             first_name_placeholder: 'Nom',
             last_name_placeholder: 'Prénom',
             email_placeholder: 'Adresse email',
-            adress_label: 'Addresse,appartement,etc...',
+            adress_label: 'Adresse,appartement,etc...',
             postal_code_placeholder: 'Code postal',
             phone_placeholder: 'N° Téléphone',
             password_placeholder: 'Mot de passe',
@@ -677,6 +677,279 @@ export const frData = {
             registerd_label: 'Vous êtes inscrit',
             register_label: "S'inscrire"
         }
+    },
+    navigation_list: {
+        menu_label: 'Menu',
+        categories_label: 'Categories',
+        search_label: 'Recherche',
+        cart_label: 'Panier',
+        panel_menu: {
+            title: 'Menu'
+        },
+        panel_cart: {
+            title: `Panier d'achat`,
+            no_product_label: 'Panier vide',
+            sub_total_label: 'Sous total',
+            view_cart_label: 'Voir panier',
+            checkout_label: 'Check-out'
+        },
+        panel_search: {
+            placeholder: 'Recherche une pièce ...'
+        },
+        panel_categories: {
+            title: 'Categories'
+        }
+    },
+    accountLinks: [
+        {
+            text: 'Informations du compte',
+            url: '/account/user-information',
+            icon: 'icon-user',
+        },
+        {
+            text: 'Notifications',
+            url: '/account/notifications',
+            icon: 'icon-alarm-ringing',
+        },
+        {
+            text: 'Commandes',
+            url: '/account/orders',
+            icon: 'icon-papers',
+        }
+    ],
+    search_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Résultas du recherche',
+            }
+        ],
+        result_label: 'Produits trouvés',
+        no_products: 'Rien trouvé ! éssayer avec un autre mot ',
+        brand_widget_title: 'Par marque',
+        price_wisget_title: 'Par prix',
+        price_filter_label: 'Prix',
+        table_columns: {
+            detail_header: 'Détail',
+            warehouse_header: 'Point de vente',
+            count_header: 'Quantité',
+            terme_header: 'Délais livraison',
+            price_header: 'Price'
+
+        },
+        product_item: {
+            add_to_cart_label: 'Ajouter au panier'
+        }
+    },
+    newsletter: {
+        title: 'Newsletter',
+        text: `Abonnez-vous pour obtenir des informations sur les produits et les coupons`,
+        input: {
+            placeholder: 'Adresse émail',
+            button_text: `S'abonner`
+        }
+    },
+    user_information_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: `Informations d'utilisateur`,
+            },
+        ],
+        active_link: `Informations du compte`,
+        title: `Informations du compte`,
+        first_name_label: 'Prénom :',
+        first_name_placeholder: 'Prénom',
+        last_name_label: 'Nom :',
+        last_name_placeholder: 'Nom',
+        address_label: 'Adresse :',
+        address_placeholder: 'Adresse',
+        phone_number_label: 'N° du téléphone :',
+        phone_number_placeholder: 'N° du téléphone',
+        email_label: 'Email :',
+        email_placeholder: 'Email',
+        postal_code_label: 'Code postal',
+        postal_code_placeholder: 'Code postal',
+        button_update_state_text: 'Mettre à jour',
+        button_updating_state_text: 'Mise à jour ...'
+
+    },
+    accout_menu_sidebar: {
+        menu: [
+            {
+                text: `Informations du compte`,
+                url: '/account/user-information',
+                icon: 'icon-user',
+            },
+            {
+                text: 'Modifier mot de passe',
+                url: '/account/edit-password',
+                icon: 'icon-lock',
+            },
+            {
+                text: 'Notifications',
+                url: '/account/notifications',
+                icon: 'icon-alarm-ringing',
+            },
+            {
+                text: 'Commandes',
+                url: '/account/orders',
+                icon: 'icon-papers',
+            }
+        ],
+        hello_label: 'Bonjour',
+        logout_label: 'Se déconnecter'
+    },
+    edit_password_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Modifier mot de passe',
+            },
+        ],
+        active_link: 'Modifier mot de passe',
+        title: 'Modifier mot de passe',
+        old_password_label: 'Ancien mot de passe',
+        new_password_label: 'Nouveau mot de passe',
+        confirm_new_password_label: 'Confirmer nouveau mot de passe',
+        button_update_state_text: 'Mettre à jour',
+        button_updating_state_text: 'Mise à jour ...'
+    },
+    cart_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Panier',
+            },
+        ],
+        title: 'Panier',
+        product_column: 'Produit',
+        warehouse_column: 'Point de vente',
+        price_column: 'Prix',
+        quantity_column: 'Quantité',
+        total_column: 'Total',
+        action_column: 'Action',
+        back_to_shop_label: 'Retour à la boutique',
+        total_label: 'Total',
+        button_checkout_label: 'Passer au paiement'
+    },
+    payment_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Panier',
+                url: '/account/shopping-cart',
+            },
+            {
+                text: 'Informations du paiement',
+            },
+        ],
+        title: `Informations du paiement`,
+        contact_information_title: `Informations du client`,
+        email_address_label: 'Email :',
+        phone_number_label: 'N° du téléphone :',
+        first_name_label: 'Prénom :',
+        last_name_label: 'Nom :',
+        shippinga_address_title: 'Adresse du livraison',
+        address_label: 'Adresse :',
+        postal_code: 'Code postal :',
+        order_title: 'Commande',
+        product_label: 'Produit',
+        subtotal_label: 'Sous total',
+        total_label: 'Total',
+        payment_method_label: 'Méthode du paiement :',
+        pay_now_label: 'Payez maintenant',
+        pay_until_shipping_label: 'Paiement à la livraison',
+        credit_card_number_label: 'N° de carte du crédit :',
+        expary_date_label: `Date d'éxpiration :`,
+        cvc_label: 'C.V.C :',
+        shipping_method_label: 'Méthode du livraison :',
+        shipping_at_home_label: 'Livraison à domicile',
+        shipping_at_warehouse_label: 'Livraison au point du vente',
+        save_informations_label: 'Sauvgarder les informations pour le prochain achat',
+        back_to_shipping_label: 'Retour au panier',
+        validate_text: 'Valider le paiement',
+        validating_text: 'Validation ...',
+        purchase_complete: 'Achat terminé avec succès'
+    },
+    notification_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Notifications',
+            },
+        ],
+        title: 'Notifications',
+        order_date_label: 'Date du commande',
+        content_label: 'Contenu',
+        catgory_label: 'Catégorie',
+        readed_label: 'Lu',
+        action_label: 'Action',
+        active_link: 'Notifications'
+    },
+    orders_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Commandes',
+            },
+        ],
+        title: 'Commandes',
+        date_column: 'Date',
+        amount_colmn: 'Total',
+        status_column: 'Statut',
+        recieved_at_column: 'Date réception',
+        detail_column: 'Détail',
+        button_detail_text: 'Détail',
+        active_link: 'Commandes',
+        recieved_label: 'Reçu',
+        new_label: 'Nouvelle'
+    },
+    order_detail_page: {
+        breadcrumb: [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Détail du commande',
+            },
+        ],
+        active_link: 'Commandes',
+        title: 'Commande n° ',
+        order_recieved_label: 'Reçu',
+        order_not_recieved_label: 'Pas encore reçu',
+        address_title: 'Adresse',
+        address_label: 'Adresse',
+        phone_label: 'N° du téléphone',
+        payment_title: 'Paiement',
+        payment_method_label: 'Méthode du paiement',
+        product_column: 'Produit',
+        price_column: 'Prix',
+        quantity: 'Quantité',
+        amount_column: 'Total',
+        back_to_orders: 'Retour aux commandes'
     }
 
 };
