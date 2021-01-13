@@ -7,7 +7,7 @@ export const enData = {
     langsMenu: [
         {
             id: 'fr',
-            name: 'Frensh'
+            name: 'French'
         },
         {
             id: 'en',
@@ -22,43 +22,31 @@ export const enData = {
             subClass: "sub-menu",
             subMenu: [
                 {
-                    text: "How to search for auto parts",
-                    url: "/"
-                },
-                {
-                    text: "How to pay for an order",
-                    url: "/"
-                },
-                {
-                    text: "How the affiliate programm works",
-                    url: "/"
-                },
-                {
-                    text: "VIN request",
-                    url: "/"
-                },
-                {
-                    text: "What to choose ?",
-                    url: "/"
-                },
-                {
                     text: "Warranty and return",
                     url: "/"
                 },
                 {
-                    text: "Video instructions",
+                    text: "VIN requests",
                     url: "/"
                 },
                 {
-                    text: "Buy CTP online",
+                    text: "How to search for parts",
                     url: "/"
                 },
                 {
-                    text: "Check car",
+                    text: "How to pay an order",
+                    url: "/"
+                },
+                {
+                    text: "OSAGO online",
                     url: "/"
                 },
                 {
                     text: "Payment",
+                    url: "/"
+                },
+                {
+                    text: "HBO registration",
                     url: "/"
                 }
             ]
@@ -68,6 +56,26 @@ export const enData = {
             url: "/contact",
             extraClass: "menu-item-has-children",
             subClass: ""
+        },
+        {
+            text: "Useful",
+            url: "/",
+            extraClass: "menu-item-has-children",
+            subClass: "sub-menu",
+            subMenu: [
+                {
+                    text: "How the programm affiliate works",
+                    url: "/"
+                },
+                {
+                    text: "No counterfeit",
+                    url: "/"
+                },
+                {
+                    text: "What to choose ?",
+                    url: "/"
+                }
+            ]
         },
         {
             text: "Company",
@@ -96,11 +104,7 @@ export const enData = {
                     url: "/"
                 },
                 {
-                    text: "Payment agreement",
-                    url: "/"
-                },
-                {
-                    text: "Personnal data processing policy",
+                    text: "Privacy agreement",
                     url: "/"
                 }
             ]
@@ -109,456 +113,125 @@ export const enData = {
     product_categories: [
         {
             icon: "icon-star",
-            text: "Autocatalogues",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Original",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Non original (TECDOC)",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Service catalogs",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Original catalogs",
+            url: "/shop"
         },
         {
             icon: "icon-laundry",
-            text: "Autolamps",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Graphic lamp catalog",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Selection lamp catalog",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "TecDoc catalog",
+            url: "/shop"
         },
         {
             icon: "icon-shirt",
-            text: "Batteries",
+            text: "Service catalog",
             url: "/shop"
         },
         {
             icon: "icon-lampshade",
-            text: "Accessories",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Car electronics",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Bonnet shock absorbers",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Mud flaps",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Exterior decor",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Baby seats",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Engine and gearbox protection",
-                            url: "/shop"
-                        },
-                        {
-                            text: "AirLine catalogs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Autoprofil catalog",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Rugs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Attachments",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Original auto accessories",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Driver's glasses",
-                            url: "/shop"
-                        },
-                        {
-                            text: "The flaps",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Other accessories",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Engine isolation",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Car cases",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Wiper brushes",
-                            url: "/shop"
-                        }
-
-                    ]
-                }
-            ]
-        },
-        {
-            icon: "icon-heart-pulse",
-            text: "Cargo",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "HICO Accessories",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Air compressors",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Hydraulic cylinders",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Truck tool",
-                            url: "/shop"
-                        },
-                        {
-                            text: "JOST catalogs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Hydraulic cylinders",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Parlok catalogue",
-                            url: "/shop"
-                        },
-                        {
-                            text: "PE catalogue",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Wheels",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Lighting equipement",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Tight bells",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            icon: "icon-diamond2",
-            text: "Tools",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Jonnesway Tools",
-                            url: "/shop"
-                        },
-                        {
-                            text: "JTC tools",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Licota tools",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Ombra tools",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Keys",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            icon: "icon-desktop",
             text: "Body parts",
             url: "/shop"
         },
         {
+            icon: "icon-heart-pulse",
+            text: "Wiper blades",
+            url: "/shop"
+        },
+        {
+            icon: "icon-diamond2",
+            text: "Engine tools",
+            url: "/shop"
+        },
+        {
             icon: "icon-baby-bottle",
-            text: "Oils and autochemity",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Sealants",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Cooling liquids",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Fluids",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Adhesives",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Engine oils",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Transmission and GD oils",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Sets",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Glass washers",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Cleaner",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Additives",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Washing",
-                            url: "/shop"
-                        },
-                        {
-                            text: "The rubbing material",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Lubrication",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Transmession oils and power steering",
+            url: "/shop"
         },
         {
             icon: "icon-baseball",
-            text: "Candels",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Ignitions candels",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Incandescent candle ",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Brake fluids",
+            url: "/shop"
         },
         {
             icon: "icon-smartphone",
-            text: "Release system",
+            text: "Antifrezze",
             url: "/shop"
         },
         {
             icon: "icon-book2",
-            text: "List of auto/moto directories",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "List of autocatalogs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "List of motor cateologists",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Washer fluid",
+            url: "/shop"
         },
         {
             icon: "icon-car-siren",
-            text: "Glass",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Catalogue of glass No.1",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue of glass No.2",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Rechargable batteries",
+            url: "/shop"
         },
         {
             icon: "icon-wrench",
-            text: "Braking system",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Suport Brake",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Brake discs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Brake pads",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Rugs",
+            url: "/shop"
         },
         {
             icon: "icon-tag",
-            text: "Filters",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Ait filter",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Oil filter",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Fuel filter",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Salon filter",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Crankcase and gearbox protection",
+            url: "/shop"
         },
         {
             icon: "icon-tag",
-            text: "Tiers and discs",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: false,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Disc catalog No.1",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Disc catalog Number 2",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Tier catalogue",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Automobile covers",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Sealants",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Lubricants",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Additives",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Adhesives",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Towbars",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Tiers",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Disk",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Lamps",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Exhaust systems",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Flavors",
+            url: "/shop"
         }
+
     ],
     mini_cart: {
         sub_total_label: 'Sub Total : ',

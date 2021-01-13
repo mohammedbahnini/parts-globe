@@ -52,10 +52,12 @@ class HeaderDefault extends Component {
                                 </a>
                             </Link>
                             <div className="menu--product-categories">
+
                                 <div className="menu__toggle">
                                     <i className="icon-menu"></i>
                                     <span> Shop by Department</span>
                                 </div>
+
                                 <div className="menu__content">
                                     {<MenuCategories />}
                                 </div>

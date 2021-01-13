@@ -41,6 +41,7 @@ class NavigationDefault extends Component {
                                     className="menu--dropdown"
                                 />}
                             </div>
+
                         </div>
                     </div>
 
@@ -62,7 +63,7 @@ class NavigationDefault extends Component {
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return state.lang;
 }
 

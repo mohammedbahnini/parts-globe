@@ -16,21 +16,13 @@ export const frData = {
     ],
     menuPrimary: [
         {
-            text: "A NOS CLIENTS",
+            text: "POUR LES CLIENTS",
             url: "",
             extraClass: "menu-item-has-children",
             subClass: "sub-menu",
             subMenu: [
                 {
-                    text: "Comment rechercher des pièces automobiles",
-                    url: "/"
-                },
-                {
-                    text: "Comment payer une commande",
-                    url: "/"
-                },
-                {
-                    text: "Comment fonctionne le programme d'affiliation",
+                    text: "Garantie et retour",
                     url: "/"
                 },
                 {
@@ -38,36 +30,52 @@ export const frData = {
                     url: "/"
                 },
                 {
-                    text: "Quoi choisir ?",
+                    text: "Comment rechercher des pièces",
                     url: "/"
                 },
                 {
-                    text: "Garantie et retour",
+                    text: "Commant payer une commande",
                     url: "/"
                 },
                 {
-                    text: "Video instructions",
-                    url: "/"
-                },
-                {
-                    text: "Acher CTP online",
-                    url: "/"
-                },
-                {
-                    text: "Vérifier voiture",
+                    text: "OSAGO en ligne",
                     url: "/"
                 },
                 {
                     text: "Paiment",
                     url: "/"
+                },
+                {
+                    text: "Enregistrement HBO",
+                    url: "/"
                 }
             ]
         },
         {
-            text: "Contactez nous",
+            text: "Contacts",
             url: "/contact",
             extraClass: "menu-item-has-children",
             subClass: ""
+        },
+        {
+            text: "UTILE",
+            url: "/",
+            extraClass: "menu-item-has-children",
+            subClass: "sub-menu",
+            subMenu: [
+                {
+                    text: "Comment fonctionne le programme d'affiliation",
+                    url: "/"
+                },
+                {
+                    text: "Pas de contefaçon",
+                    url: "/"
+                },
+                {
+                    text: "Que choisir ?",
+                    url: "/"
+                }
+            ]
         },
         {
             text: "Entreprise",
@@ -76,7 +84,7 @@ export const frData = {
             subClass: "sub-menu",
             subMenu: [
                 {
-                    text: "A propos de nous",
+                    text: "À propos de nous",
                     url: "/about"
                 },
                 {
@@ -84,7 +92,7 @@ export const frData = {
                     url: "/franchise"
                 },
                 {
-                    text: "Nouveautés",
+                    text: "Nouveatés",
                     url: "/"
                 },
                 {
@@ -96,11 +104,7 @@ export const frData = {
                     url: "/"
                 },
                 {
-                    text: "Accord de paiement",
-                    url: "/"
-                },
-                {
-                    text: "Politique de traitement des données personnelles",
+                    text: "Accord de confidentialité",
                     url: "/"
                 }
             ]
@@ -109,452 +113,125 @@ export const frData = {
     product_categories: [
         {
             icon: "icon-star",
-            text: "Catalogues",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Originale",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Non original (TECDOC)",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogues des services",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Catalogues originaux",
+            url: "/shop"
         },
         {
             icon: "icon-laundry",
-            text: "Lampes",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Catalogue des lampes",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue des lampes",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Catalogue TecDoc",
+            url: "/shop"
         },
         {
             icon: "icon-shirt",
-            text: "Batteries",
+            text: "Catalogue de services",
             url: "/shop"
         },
         {
             icon: "icon-lampshade",
-            text: "Accessories",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Électronique automobile",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Amortisseurs de capot",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Garde-boues",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Décor extérieur",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Sièges bébé",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Protection du moteur et de la boîte de vitesses",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogues AirLine",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue autoprofil",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Tapis",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Pièces jointes",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Accessoires automobiles d'origine",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Lunettes conducteur",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Les volets",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Autres accessoires",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Isolation du moteur",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Cadres",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Brosses d'essuie-glace",
-                            url: "/shop"
-                        }
-
-                    ]
-                }
-            ]
+            text: "Parties du corps",
+            url: "/shop"
         },
         {
             icon: "icon-heart-pulse",
-            text: "Cargaison",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "HICO Accessories",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Compresseurs d'air",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Cylindres hydrauliques",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Outil de camion",
-                            url: "/shop"
-                        },
-                        {
-                            text: "JOST catalogues",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue Parlok",
-                            url: "/shop"
-                        },
-                        {
-                            text: "PE catalogue",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Roues",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Matériel d'éclairage",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Cloches serrées",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Balais d'essuie glasse",
+            url: "/shop"
         },
         {
             icon: "icon-diamond2",
-            text: "Outils",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Outils Jonnesway",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Outils JTC",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Outils Licota",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Outils Ombra",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Cléss",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            icon: "icon-desktop",
-            text: "Partie du corps",
+            text: "Huiles moteur",
             url: "/shop"
         },
         {
             icon: "icon-baby-bottle",
-            text: "Huiles et autochtones",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Scellants",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Liquides de refroidissement",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Fluides",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Adhésifs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Huiles moteur",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Huiles de transmission et GD",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Ensembles",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Rondelles de verre",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Nettoyeur",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Additifs",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Le lavage",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Le matériau de frottement",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Le graissage",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Huiles de transmission et direction assistée",
+            url: "/shop"
         },
         {
             icon: "icon-baseball",
-            text: "Bougies",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Bougies d'allumage",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Bougie incandescente",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Liquides de frein",
+            url: "/shop"
         },
         {
             icon: "icon-smartphone",
-            text: "Système de libération",
+            text: "Antigel",
             url: "/shop"
         },
         {
             icon: "icon-book2",
-            text: "Liste des répertoires auto / moto",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Liste des autocatalogues",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Liste des catéologues moteurs",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Liquide lave-glace",
+            url: "/shop"
         },
         {
             icon: "icon-car-siren",
-            text: "Verre",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Catalogue de verre n ° 1",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue de verre n ° 2",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Batteries rechargables",
+            url: "/shop"
         },
         {
             icon: "icon-wrench",
-            text: "Système de freinage",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Frein Suport",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Disques de frein",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Les plaquettes de frein",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Tapis",
+            url: "/shop"
         },
         {
             icon: "icon-tag",
-            text: "Filtres",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: true,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Filtre à air",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Filtre à l'huile",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Filtre à carburant",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Filtre de salon",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Protection du carter et de la boîte de vitesses",
+            url: "/shop"
         },
         {
             icon: "icon-tag",
-            text: "Pneus et Disques",
-            url: "/shop",
-            extraClass: "menu-item-has-children has-mega-menu",
-            subClass: "sub-menu",
-            mega: false,
-            megaContent: [
-                {
-                    megaItems: [
-                        {
-                            text: "Catalogue de disques n ° 1",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue de disques n° 2",
-                            url: "/shop"
-                        },
-                        {
-                            text: "Catalogue des pneus",
-                            url: "/shop"
-                        }
-                    ]
-                }
-            ]
+            text: "Housses automobiles",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Scellants",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Lubrifiants",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Additifs",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Adhésifs",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Attelages",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Pneus",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Diques",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Lampes",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Système d'échappement",
+            url: "/shop"
+        },
+        {
+            icon: "icon-tag",
+            text: "Saveurs",
+            url: "/shop"
         }
+
     ],
     mini_cart: {
         sub_total_label: 'Sous Total : ',
