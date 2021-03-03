@@ -29,60 +29,11 @@ class PanelCategories extends Component {
     };
 
     render() {
-        /*const shopCategories = [
-            {
-                text: 'All Products',
-                url: '/shop',
-            },
-            {
-                text: 'Clothing & Apparel',
-                url: '/shop?category=clothing',
-            },
-            {
-                text: 'Garden & Kitchen',
-                url: '/shop?category=garden',
-            },
-            {
-                text: 'Consumer Electrics',
-                url: '/shop?category=electronic',
-            },
-            {
-                text: 'Health & Beauty',
-                url: '/shop?category=beauty',
-            },
-            {
-                text: 'Computers & Technologies',
-                url: '/shop?category=technologies',
-            },
-            {
-                text: 'Jewelry & Watches',
-                url: '/shop?category=jewelry',
-            },
-            {
-                text: 'Phones & Accessories',
-                url: '/shop?category=phone',
-            },
-            {
-                text: 'Sport & Outdoor',
-                url: '/shop?category=sport',
-            },
-            {
-                text: 'Babies & Moms',
-                url: '/shop?category=baby',
-            },
-            {
-                text: 'Books & Office',
-                url: '/shop?category=book',
-            },
-            {
-                text: 'Cars & Motocycles',
-                url: '/shop?category=cars',
-            },
-        ];*/
+
         const { shopCategories } = this.props;
 
         return (
-            <div className="ps-panel__wrapper">
+            <div className="ps-panel__wrapper" style={{ paddingBottom: 80 }}>
                 <div className="ps-panel__header">
                     <h3>{this.props.panel_categories.title}</h3>
                 </div>

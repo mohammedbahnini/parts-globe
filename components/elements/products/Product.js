@@ -72,7 +72,7 @@ class Product extends Component {
         return (
             <div className="ps-product">
                 <div className="ps-product__thumbnail">
-                    <Link href="/product/[pid]" as={`/product/${product.id}`}>
+                    <Link href="#" >
                         <a>
                             <img src={product.thumbnail} alt="" />
                         </a>
@@ -129,8 +129,8 @@ class Product extends Component {
 
                     <div className="ps-product__content">
                         <Link
-                            href="/product/[pid]"
-                            as={`/product/${product.id}`}>
+                            href="#"
+                            >
                             <a className="ps-product__title">{product.title}</a>
                         </Link>
                         <div className="ps-product__rating">
@@ -156,8 +156,8 @@ class Product extends Component {
                     </div>
                     <div className="ps-product__content hover">
                         <Link
-                            href="/product/[pid]"
-                            as={`/product/${product.id}`}>
+                            href="#"
+                            >
                             <a className="ps-product__title">{product.title}</a>
                         </Link>
                         {product.sale === true ? (

@@ -5,7 +5,13 @@ import MegaMenu from './MegaMenu';
 import MenuDropdown from './MenuDropdown';
 
 const Menu = ({ data, className }) => (
-    <ul className={className}>
+    <ul className={className} 
+    style={
+        {
+            display : 'grid',
+            gridTemplateColumns : 'repeat(6,1fr)'
+        }
+    }>
         {data &&
             data.map(item => {
                 if (item.subMenu) {

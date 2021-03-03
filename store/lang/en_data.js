@@ -269,7 +269,41 @@ export const enData = {
         }
     },
     top_catalogs: {
-        title: 'Top gategories'
+        title: 'Top gategories',
+        catalogs: [
+            {
+                title: 'Original catalogs',
+                img_url: '/static/img/categories/15.jpg'
+            },
+            {
+                title: 'Catalog analogs',
+                img_url: '/static/img/categories/16.jpg'
+            },
+            {
+                title: 'Ties and wheels',
+                img_url: '/static/img/categories/10.jpg'
+            },
+            {
+                title: 'Auto detailing',
+                img_url: '/static/img/categories/17.jpg'
+            },
+            {
+                title: 'Maintenance',
+                img_url: '/static/img/categories/11.jpg'
+            },
+            {
+                title: 'Car glass',
+                img_url: '/static/img/categories/13.jpg'
+            },
+            {
+                title: 'Oils',
+                img_url: '/static/img/categories/9.jpg'
+            },
+            {
+                title: 'Accessories',
+                img_url: '/static/img/categories/12.jpg'
+            }
+        ]
     },
     best_sellers: {
         title: 'Best sellers'
@@ -627,5 +661,24 @@ export const enData = {
         quantity: 'Quantity',
         amount_column: 'Amount',
         back_to_orders: 'Back to orders'
+    } , 
+    page_single  : {
+        breadcrumb : [
+            {
+                text: 'Home',
+                url: '/',
+            },
+            {
+                text: 'Product Detail',
+            },
+        ] , 
+        brand_label : 'Brand : ' , 
+        part_number_label : 'Part N° : ' , 
+        stocks_title : 'Stocks' , 
+        empty_stocks  : 'This product is not avaible now .',
+        warehouse_label : 'Warehouse' ,
+        quantity_label : 'Quantity' , 
+        price_label : 'Price' , 
+        add_to_cart_label : 'Add to cart'
     }
 };

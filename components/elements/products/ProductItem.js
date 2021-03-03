@@ -90,10 +90,10 @@ class ProductItem extends Component {
             line.push(<td className="text-center">{stocks[i].delivery} day(s)</td>);
             line.push(<td>{this.formatNumber(stocks[i].price)}</td>);
             line.push(<td>
-                <button className="btn_add_to_cart" onClick={(e) => this.handleAddItemToCart(e, stocks[i])}>Add to cart</button>
+                <button className="btn_add_to_cart" onClick={(e) => this.handleAddItemToCart(e, stocks[i])}>{this.props.product_item.add_to_cart_label}</button>
             </td>);
 
-            lines.push(<tr>{line}</tr>);
+            lines.push(<tr key={stocks[i].id}>{line}</tr>);
         }
         return lines;
     }

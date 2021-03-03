@@ -269,7 +269,41 @@ export const frData = {
         }
     },
     top_catalogs: {
-        title: 'Meilleurs gatégories'
+        title: 'Meilleurs gatégories',
+        catalogs: [
+            {
+                title: 'Catalogues originaux',
+                img_url: '/static/img/categories/15.jpg'
+            },
+            {
+                title: 'Catalogues analogues',
+                img_url: '/static/img/categories/16.jpg'
+            },
+            {
+                title: 'Pneus rt roues',
+                img_url: '/static/img/categories/10.jpg'
+            },
+            {
+                title: 'Détail automoatique',
+                img_url: '/static/img/categories/17.jpg'
+            },
+            {
+                title: 'Entretien',
+                img_url: '/static/img/categories/11.jpg'
+            },
+            {
+                title: 'Verre de voiture',
+                img_url: '/static/img/categories/13.jpg'
+            },
+            {
+                title: 'Huiles',
+                img_url: '/static/img/categories/9.jpg'
+            },
+            {
+                title: 'Accessories',
+                img_url: '/static/img/categories/12.jpg'
+            }
+        ]
     },
     best_sellers: {
         title: 'Meilleurs ventes'
@@ -627,6 +661,25 @@ export const frData = {
         quantity: 'Quantité',
         amount_column: 'Total',
         back_to_orders: 'Retour aux commandes'
+    } , 
+    page_single  : {
+        breadcrumb : [
+            {
+                text: 'Acceuil',
+                url: '/',
+            },
+            {
+                text: 'Détail du produit',
+            },
+        ] , 
+        brand_label : 'Marque : ' , 
+        part_number_label : 'Référence N° : ' , 
+        stocks_title : 'Stocks' , 
+        empty_stocks  : 'Ce produit n\'est pas disponible pour le moment .',
+        warehouse_label : 'Point de vente' ,
+        quantity_label : 'Quantité' , 
+        price_label : 'Prix' , 
+        add_to_cart_label : 'Ajouter au panier'
     }
 
 };

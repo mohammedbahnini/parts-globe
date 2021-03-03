@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import Link from 'next/link';
 import { notification } from 'antd';
 import Menu from '../../elements/menu/Menu';
@@ -11,6 +11,9 @@ import { connect } from 'react-redux';
 class NavigationDefault extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            menuWidth: 0
+        }
     }
 
     handleFeatureWillUpdate(e) {
@@ -22,11 +25,32 @@ class NavigationDefault extends Component {
         });
     }
 
+
+    componentDidMount() {
+        const setSize = async () => {
+            const menu = document.querySelector('div.header__menu');
+
+            let width = menu.clientWidth;
+            const paddingRight = window.getComputedStyle(menu).getPropertyValue('padding-right').replace('px', '');
+            const paddingLeft = window.getComputedStyle(menu).getPropertyValue('padding-left').replace('px', '');
+            width = width - paddingRight - paddingLeft;
+            const categoriesMenu = document.querySelector('div.catalogs__menu');
+            this.setState({
+                menuWidth: width
+            });
+        }
+        setSize();
+        window.addEventListener('resize', () => {
+            setSize();
+        });
+
+    }
+
     render() {
         const { langData } = this.props;
         return (
             <nav className="navigation">
-                <div className="ps-container">
+                <div className="ps-container header__menu" >
 
                     <div className="navigation__left">
                         <div className="menu--product-categories">
@@ -35,7 +59,7 @@ class NavigationDefault extends Component {
                                 <i className="icon-menu"></i>
                                 <span> Catalogs</span>
                             </div>
-                            <div className="menu__content">
+                            <div className="menu__content catalogs__menu" style={{ width: this.state.menuWidth }} >
                                 {<Menu
                                     data={langData.product_categories}
                                     className="menu--dropdown"

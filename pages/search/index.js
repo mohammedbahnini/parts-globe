@@ -26,7 +26,7 @@ class SearchResultsPage extends React.Component {
                 <NavigationList />
                 <BreadCrumb breacrumb={breadcrumb} />
                 <div className="ps-page--shop" id="shop-sidebar">
-                    <div className="container">
+                    <div className="ps-container">
                         <SearchResult />
                     </div>
                 </div>

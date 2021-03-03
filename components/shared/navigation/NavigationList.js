@@ -68,6 +68,7 @@ class NavigationList extends Component {
             categoriesDrawer,
         } = this.state;
 
+
         return (
             <div className="navigation--list">
                 <Drawer
@@ -75,7 +76,9 @@ class NavigationList extends Component {
                     placement="right"
                     closable={false}
                     onClose={this.handleDrawerClose}
-                    visible={this.state.menuDrawer}>
+                    visible={this.state.menuDrawer}
+
+                >
                     <PanelMenu />
                 </Drawer>
                 <Drawer
@@ -83,7 +86,9 @@ class NavigationList extends Component {
                     placement="right"
                     closable={false}
                     onClose={this.handleDrawerClose}
-                    visible={this.state.cartDrawer}>
+                    visible={this.state.cartDrawer}
+
+                >
                     <PanelCartMobile />
                 </Drawer>
                 <Drawer
@@ -91,7 +96,9 @@ class NavigationList extends Component {
                     placement="right"
                     closable={false}
                     onClose={this.handleDrawerClose}
-                    visible={this.state.searchDrawer}>
+                    visible={this.state.searchDrawer}
+
+                >
                     <PanelSearch />
                 </Drawer>
                 <Drawer
@@ -99,7 +106,9 @@ class NavigationList extends Component {
                     placement="right"
                     closable={false}
                     onClose={this.handleDrawerClose}
-                    visible={this.state.categoriesDrawer}>
+                    visible={this.state.categoriesDrawer}
+
+                >
                     <PanelCategories />
                 </Drawer>
                 <div className="navigation__content">

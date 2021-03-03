@@ -36,7 +36,7 @@ class PanelMenu extends Component {
         const { menuPrimary } = this.props;
 
         return (
-            <div className="ps-panel__wrapper">
+            <div className="ps-panel__wrapper" style={{ paddingBottom: 80 }}>
                 <div className="ps-panel__header">
                     <h3>{title}</h3>
                 </div>

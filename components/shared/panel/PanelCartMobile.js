@@ -21,7 +21,7 @@ class PanelCartMobile extends Component {
         const { panel_cart } = this.props;
 
         return (
-            <div className="ps-panel--wrapper">
+            <div className="ps-panel--wrapper" style={{ paddingBottom: 80 }}>
                 <div className="ps-panel__header">
                     <h3>{panel_cart.title}</h3>
                 </div>

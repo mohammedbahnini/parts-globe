@@ -18,7 +18,7 @@ class ProductList extends Component {
         return (
 
             <React.Fragment>
-                <table className="product-list">
+                <table className="product-list full-details">
                     <thead>
                         <tr>
                             <th className="product-detail-col">{table_columns.detail_header}</th>

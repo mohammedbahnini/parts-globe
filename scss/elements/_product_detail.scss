@@ -1,11 +1,14 @@
-.ps-shopping-product{
-    overflow: scroll;
-}
-
-.product-list{
-    width : 100%;
+.full-details{
+    width : 100%; 
+    
+    @include media('<md'){
+        width: 1200px;
+    }
+    @include media('<sm'){
+        width: 1100px;
+    }
     @include media('<xs'){
-        width: 840px;
+        width: 1060px;
     }
 }
 .product-list thead{
@@ -62,3 +65,20 @@ tr.product-separator td{
     border-bottom:.5px solid #e8e8e8d1;
 }
 
+.ps-shopping-product{
+    @include media ('<md'){
+        overflow: scroll;
+    }
+}
+
+.single-detail{
+    width: 100%;
+    @include media('<md'){
+        width : 500px
+    }
+}
+.single-detail-wrapper{
+    @include media('<md'){
+        overflow: scroll;
+    }
+}
