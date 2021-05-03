@@ -31,7 +31,7 @@ nextApp.prepare().then(() => {
         saveUninitialized: false,
         httpOnly: true,
         store: new MySQLStore({
-            host: '72.9.135.10',
+            host: '64.188.2.244',
             user: 'era_creator',
             password: 'Gu35T_2020',
             database: 'era_auto_parts'
