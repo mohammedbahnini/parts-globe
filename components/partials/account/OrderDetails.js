@@ -80,7 +80,7 @@ class OrderDetail extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="table-responsive">
-                                                    <table className="table ps-table--shopping-cart">
+                                                    <table className="table ps-table--shopping-cart orders-detail">
                                                         <thead>
                                                             <tr>
                                                                 <th>{order_detail_page.product_column}</th>
@@ -101,7 +101,7 @@ class OrderDetail extends Component {
                                                                                 {product.Price} $
                                                                             </td>
 
-                                                                            <td>{product.Quantity}</td>
+                                                                            <td className="quantity">{product.Quantity}</td>
                                                                             <td className="price">
                                                                                 {product.Price} $
                                                                             </td>

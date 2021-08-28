@@ -13,7 +13,7 @@ const sendMail = require('../mailer');
 clientRouter.post('/api/user/register' , async  (req,res)=>{
     
    try {
-        // check the validity of the infos
+
         let { firstName,lastName , address,phone,postalCode,email , password , password2 } = req.body;
         // removing whitespaces
         firstName = firstName.trim();
@@ -27,7 +27,7 @@ clientRouter.post('/api/user/register' , async  (req,res)=>{
 
 
         let errors = [];
-
+        
         if( 
             !firstName || 
             !lastName ||
@@ -80,10 +80,13 @@ clientRouter.post('/api/user/register' , async  (req,res)=>{
         else
         {
             const client = await clientModel.getUserById(saveResult.insertedId);
+            console.log(client.data);
             await sendMail(client.data.email,client.data.token);
             res.send(saveResult);
         }
-        
+
+
+
    } catch (error) {
        console.log( error);
    }
@@ -296,59 +299,10 @@ clientRouter.post('/api/user/update-notification-status/:notifID',async (req,res
 });
 
 clientRouter.post('/api/user/sendemail',async (req,res)=>{
-    // setting google credentials
-    /*const Auth0 = google.auth.OAuth2;
-    const authClient = new Auth0({
-        clientId : '591889027671-jhjq0oec8aif3v96ma1jri5o8269kctf.apps.googleusercontent.com',
-        clientSecret : 'g2xwpODdqJtxP2er5xYJZhpJ',
-        redirectUri : 'https://developers.google.com/oauthplayground'
-    });
 
-    authClient.setCredentials({refresh_token : '1//04tFOVQVWvbHyCgYIARAAGAQSNwF-L9IrCmkpbyjacGKKuYJ6XkpQp5-hoSYH4wzMdSYtogC2l43wNgYousy_3XQiotCaj1iNHU0'});
-    const accessToken = authClient.getAccessToken();
-
-    const smtpTransport = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-             type: "OAuth2",
-             user: "med.dev.checker@gmail.com", 
-             clientId: "591889027671-jhjq0oec8aif3v96ma1jri5o8269kctf.apps.googleusercontent.com",
-             clientSecret: "g2xwpODdqJtxP2er5xYJZhpJ",
-             refreshToken: "1//04tFOVQVWvbHyCgYIARAAGAQSNwF-L9IrCmkpbyjacGKKuYJ6XkpQp5-hoSYH4wzMdSYtogC2l43wNgYousy_3XQiotCaj1iNHU0"
-        }
-   });
-
-   smtpTransport.use('compile' ,hbs({
-        viewEngine : {
-            extname : '.hbs',
-            layoutsDir : 'mailTemplate' ,
-            partialsDir : 'mailTemplate' , 
-            defaultLayout : 'mail'
-        },
-        viewPath : 'mailTemplate',
-        extName : '.hbs'
-    }));
-
-   const mailOptions = {
-    from: "med.dev.checker@gmail.com",
-    to: "mohammed.dev.rise@outlook.com",
-    subject: "Node.js Email with Secure OAuth",
-    template : 'mail' , 
-    context : {
-        msg : 'Activate account'
-    }
-    };
-
-    
-
-    smtpTransport.sendMail(mailOptions, (error, response) => {
-        error ? console.log(error) : console.log(response);
-        smtpTransport.close();
-   });
-*/
-    const mailSend = await sendMail('mohammed.dev.rise@outlook.com');
-    console.log(mailSend);
-
+   const { email , token } = req.body;
+   const sending_result = await sendMail(email,token);
+   console.log(sending_result);
    res.end();
 });
 

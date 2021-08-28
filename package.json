@@ -5,10 +5,13 @@
     "scripts": {
         "dev": "nodemon api/app.js",
         "build": "next build",
-        "start": "node api/app.js -p $PORT"
+        "start": "node api/app.js -p $PORT",
+        "prod_start": "node api/app.js",
+        "export": "next export"
     },
     "dependencies": {
         "@ant-design/icons": "^4.0.5",
+        "@sendgrid/mail": "^7.4.6",
         "@stripe/react-stripe-js": "^1.1.2",
         "@stripe/stripe-js": "^1.7.0",
         "@zeit/next-sass": "^1.0.1",

@@ -32,7 +32,7 @@ productRouter.post('/api/products', async (req, res) => {
         const db_products = productModel.getProduct(text);
 
 
-        Promise.all([rossko, db_products])
+        Promise.all([rossko,db_products])
             .then(values => {
                 const parts = [];
                 const brands = [];

@@ -7,7 +7,8 @@ const productModel = {
         try {
             param = param.replace(/(\s+)/, '#');
             let condition = null;
-            if (param.length > 0) {
+            if (param.length > 0) 
+            {
                 param = param.split('#');
                 condition = param.map(el => `name LIKE '%${el}%' `);
                 condition = condition.join(' OR ');
