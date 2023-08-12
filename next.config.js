@@ -1,6 +1,8 @@
 const withPlugins = require('next-compose-plugins');
-const withSass = require('@zeit/next-sass');
+// const withSass = require('@zeit/next-sass');
 const withImages = require('next-images');
+const path = require('path');
+ 
 
 const nextEnv = require('next-env');
 const dotnevLoad = require('dotenv-load');
@@ -34,7 +36,11 @@ const nextConfig = {
         GMAIL_REDIRECT_URI: config.GMAIL_REDIRECT_URI,
         GMAIL_REFRESH_TOKEN: config.GMAIL_REFRESH_TOKEN,
         GMAIL_ACCESS_TOKEN: config.GMAIL_ACCESS_TOKEN,
-    }
+    },
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'scss')],
+      },
 }
 
-module.exports = withPlugins([[withSass(), withImages()]], nextConfig);
+// module.exports = withPlugins([[withSass(), withImages()]], nextConfig);
+module.exports = withPlugins([[ withImages()]], nextConfig);

@@ -53,7 +53,7 @@ class SearchHeader extends Component {
                 <div
                     className={`ps-panel--search-result${searchPanel && searchPanel === true ? ' active ' : ''
                         }`}>
-                    <div className="ps-panel__content">
+                    {/* <div className="ps-panel__content">
                         {searchProducts.length > 0 ? (
                             searchProducts.map(product => (
                                 <ProductResult
@@ -64,7 +64,7 @@ class SearchHeader extends Component {
                         ) : (
                                 <span>Not found! Try with another keyword.</span>
                             )}
-                    </div>
+                    </div> */}
                     <div className="ps-panel__footer text-center">
                         <Link href="/search">
                             <a>See all results</a>

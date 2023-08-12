@@ -224,8 +224,8 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
     $no-media-breakpoint-value: map-get($breakpoints, $im-no-media-breakpoint);
 
     @if not $no-media-breakpoint-value {
-        @if log('`#{$im-no-media-breakpoint}` is not a valid breakpoint.') {
-        }
+        // @if log(' `#{$im-no-media-breakpoint}` is not a valid breakpoint.') {
+        // }
     }
 
     @each $condition in $conditions {
@@ -273,7 +273,8 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
     // functions cannot be called anywhere in Sass, we need to hack the call in
     // a dummy variable, such as `$_`. If anybody ever raise a scoping issue with
     // Sass 3.3, change this line in `@if log(..) {}` instead.
-    $_: log('No operator found in `#{$expression}`.');
+    // $_: log('No operator found in .');
+    @if log(#{'No operator found in .'}) {}
 }
 
 ///
@@ -333,7 +334,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
         // functions cannot be called anywhere in Sass, we need to hack the call in
         // a dummy variable, such as `$_`. If anybody ever raise a scoping issue with
         // Sass 3.3, change this line in `@if log(..) {}` instead.
-        $_: log('Unknown unit `#{unit($value)}`.');
+        $_: log(#{'Unknown unit '} #{unit($value)}); 
     }
 
     @if $operator == '>' {
@@ -409,7 +410,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
     @if type-of($value) == 'number' {
         @return $value;
     } @else if type-of($value) != 'string' {
-        $_: log('Value for `to-number` should be a number or a string.');
+        $_: log(#{'Value for `to-number` should be a number or a string.'});
     }
 
     $result: 0;
@@ -479,7 +480,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
     );
 
     @if not index(map-keys($units), $unit) {
-        $_: log('Invalid unit `#{$unit}`.');
+        $_: log(#{'Invalid unit `#{$unit}`.'});
     }
 
     @return $value * map-get($units, $unit);
